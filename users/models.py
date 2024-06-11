@@ -10,16 +10,7 @@ class CustomUser(AbstractUser):
     phone_number = models.CharField(max_length=12)  # Телефон пользователя
     newsletter = models.BooleanField(default=True)  # Согласие на рассылку (да/нет)
     register_date = models.DateTimeField(auto_now_add=True)  # Дата создания аккаунта
-    add_info = models.JSONField()  # Дополнительная информация в формате json (Планы на ремонт, личная инфа)
-
-
-class Loyalty(models.Model):
-    """
-    Модель программы лояльности.
-    """
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    points = models.IntegerField()  # Количество бонусных очков
-    transaction_type = models.CharField(max_length=10, choices=[('earn', 'Earn'), ('redeem', 'Redeem')])  # Тип транзакции (начисление или списание).
+    add_info = models.JSONField(null=True, blank=True)  # Дополнительная информация в формате json (Планы на ремонт, личная инфа)
 
 
 class LoyaltyTransaction(models.Model):
