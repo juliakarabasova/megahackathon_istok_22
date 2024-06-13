@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Product(models.Model):
     """
@@ -14,25 +16,33 @@ class Product(models.Model):
     ]
     KITCHEN = 'kitchen'
     WARDROBE = 'wardrobe'
-    HALLWAY = 'hallway'
+    BATHROOM = 'bathroom'
     DRESSER = 'dresser'
     RACK = 'rack'
+    CHILDREN = 'children'
     CATEGORY_CHOICES = [
         (KITCHEN, 'Кухня'),
         (WARDROBE, 'Гардероб'),
-        (HALLWAY, 'Прихожая'),
+        (BATHROOM, 'Ванная комната'),
         (DRESSER, 'Комод'),
         (RACK, 'Стеллаж'),
+        (CHILDREN, 'Мебель в детскую'),
     ]
 
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='product_images/image/')  # Изображение
-    design = models.ImageField(upload_to='product_images/design/')  # чб эскиз
-    model_3d = models.FileField(upload_to='product_models/')
-    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default=KITCHEN)
-    purpose = models.CharField(max_length=10, choices=PURPOSE_CHOICES, default=HOME)  # Назначение
-    shape = models.CharField(max_length=100)  # Форма изделия
-    facade_material = models.CharField(max_length=100)  # Материал фасадов
-    countertop_material = models.CharField(max_length=100)  # Материал столешницы
+    name = models.CharField(max_length=100, verbose_name='Название продукта')
+    description = models.TextField(verbose_name='Описание')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
+    image = models.ImageField(upload_to='product_images/image/', verbose_name='Изображение')
+    design = models.ImageField(upload_to='product_images/design/', blank=True, verbose_name='ЧБ эскиз')
+    model_3d = models.FileField(upload_to='product_models/', blank=True, verbose_name='3д модель')
+    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default=KITCHEN, verbose_name='Категория')
+    purpose = models.CharField(max_length=10, choices=PURPOSE_CHOICES, default=HOME, verbose_name='Назначение')
+    shape = models.CharField(max_length=100, blank=True, verbose_name='Форма изделия')
+    facade_material = models.CharField(max_length=100, blank=True, verbose_name='Материал фасадов')
+    countertop_material = models.CharField(max_length=100, blank=True, verbose_name='Материал столешницы')
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={'pk': self.pk})
