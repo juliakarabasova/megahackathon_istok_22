@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main__style.css">
+    <link rel="stylesheet" href="../static/main__style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <title>Istok</title>
+    <title>Главный экран</title>
 </head>
-<body class="wrapper">
+<body class="body">
     <header class="header">
-        <div class="header__wrap">
+        <div class="header__wrap wrapper">
             <div class="header__logo">
-                <img class="header__svg" src="Image/svg/i.svg">
-                <img class="header__svg" src="Image/svg/s.svg">
-                <img class="header__svg" src="Image/svg/t.svg">
-                <img class="header__svg" src="Image/svg/label.svg">
-                <img class="header__svg" src="Image/svg/upK.svg">
-                <img class="header__svg header__svg_downK" src="Image/svg/downK.svg">
+                <img class="header__svg" src="../static/../static/Image/svg/labelheader.svg">
             </div>
             <ul class="header__list">
                 <li class="header__item">Каталог</li>
@@ -29,60 +24,57 @@
             </ul>
         </div>
     </header>
-    <main>
-        <div class="video">  
-            <img class="video__play" src="Image/png/video.png">
-        </div>
-        <div class="description">
-            <div class="description__wrapper">
+    <main class="main wrapper">
+        <article class="video">  
+            <img class="video__play" src="../static/Image/png/video.png">
+        </article>
+        <article class="description">
+            <section class="description__wrapper">
                 <p class="description__text"><span class="description__text description__text_fatty">Компания ISTOK</span> — это стартап опытной команды профессионалов. Мы создали бренд, предоставляющий высококачественный сервис с использованием современных технологий как для взаимодействия с клиентами, так и для организации производства.</p>
                 <p class="description__text">Мы уделяем внимание защите окружающей среды и заботимся о благополучии людей. Кроме того, мы стремимся сделать процесс покупки максимально комфортным для наших клиентов, поэтому выбираем <span class="description__text description__text_fattySmall">качественных и проверенных партнеров</span>:</p>
-                <img class="description__table" src="Image/png/table.png">
-            </div>
-            <div class="description__logo">
-                <img src="Image/svg/egger.svg">
-                <img src="Image/svg/agt.svg">
-                <img src="Image/svg/blum.svg">
-                <img src="Image/svg/hettich.svg">
-            </div>
-        </div>
-        <div class="advertising">
+                <img class="description__table" src="../static/Image/png/table.png">
+            </section>
+            <section class="description__logo">
+                <img src="../static/Image/svg/egger.svg">
+                <img src="../static/Image/svg/agt.svg">
+                <img src="../static/Image/svg/blum.svg">
+                <img src="../static/Image/svg/hettich.svg">
+            </section>
+        </article>
+        <section class="advertising">
             <p class="advertising__action">АКЦИЯ!</p>
             <p class="advertising__promotion">Будь в числе первых и оформи заказ со скидкой -10%</p>
-            <img class="advertising__arrowRight" src="Image/svg/arrowRight.svg">
-        </div>
-        <div class="catalog">
+            <img class="advertising__arrowRight" src="../static/Image/svg/arrowRight.svg">
+        </section>
+        <article class="catalog">
             <p class="catalog__title">Каталог</p>
-            <div class="catalog__wrapper">
-                <div class="catalog__version">
-                    <img src="Image/png/dresser.png">
+            <section class="catalog__wrapper">
+                <section class="catalog__version">
+                    <img src="../static/Image/png/dresser.png">
                     <div class="catalog__box">
                         <p class="catalog__name">Комоды</p>
-                        <img class="catalog__background" src="Image/svg/backgroundDresser.svg">
                     </div>
-                </div>
-                <div class="catalog__version">
-                    <img src="Image/png/kitchen.png">
+                </section>
+                <section class="catalog__version">
+                    <img src="../static/Image/png/kitchen.png">
                     <div class="catalog__box">
                         <p class="catalog__name">Кухни</p>
-                        <img class="catalog__background" src="Image/svg/backgroundkitchen.svg">
                     </div>
-                </div>
-                <div class="catalog__version">
-                    <img src="Image/png/wardrobe.png">
+                </section>
+                <section class="catalog__version">
+                    <img src="../static/Image/png/wardrobe.png">
                     <div class="catalog__box">
                         <p class="catalog__name">Гардеробы</p>
-                        <img class="catalog__background" src="Image/svg/backgroundWardrobe.svg">
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
             <div class="catalog__inner">
                 <p class="catalog__open">Открыть весь каталог</p>
-                <img class="catalog__arrowRightGreen" src="Image/svg/arrowRightGreen.svg">
+                <img class="catalog__arrowRightGreen" src="../static/Image/svg/arrowRightGreen.svg">
             </div>
-        </div>
+        </article>
         <div class="advantages">
-            <img class="advantages__backgroundLabel" src="Image/png/backgroundLabel.png">
+            <img class="advantages__backgroundLabel" src="../static/Image/png/backgroundLabel.png">
             <h2 class="advantages__head">Почему выбирают нас?</h2>
             <div class="advantages__wrapper">
                 <div class="advantages__box">
@@ -100,14 +92,14 @@
             </div>
             <button class="advantages__btn"><span class="advantages__btnText">Связаться с нами</span></button> 
         </div>
-        <img src="Image/png/kitchen1.png">
+        <img src="../static/Image/png/kitchen1.png">
         <div class="workOrder">
             <h3 class="workOrder__header">Как мы работаем?</h3>
             <div class="wardrobe__wrap">
                 <div class="workOrder__wrapper">
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="Image/svg/1.svg">
+                            <img class="wardrobe__num" src="../static/Image/svg/1.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Онлайн консультация</h4>
@@ -116,7 +108,7 @@
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="Image/svg/3.svg">
+                            <img class="wardrobe__num" src="../static/Image/svg/3.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Технический замер</h4>
@@ -125,7 +117,7 @@
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="Image/svg/5.svg">
+                            <img class="wardrobe__num" src="../static/Image/svg/5.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Производство</h4>
@@ -134,7 +126,7 @@
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="Image/svg/7.svg">
+                            <img class="wardrobe__num" src="../static/Image/svg/7.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Обратная связь</h4>
@@ -149,7 +141,7 @@
                             <p class="wardrobe__text wardrobe__text_right">Наш дизайнер привезет с собой материалы, покажет вам отличие одного от другого, спроектирует стильный и эргономичный проект, а также оформит ваш заказ.</p>    
                         </div>
                         <div>
-                            <img class="wardrobe__num wardrobe__num_right" src="Image/svg/2.svg">
+                            <img class="wardrobe__num wardrobe__num_right" src="../static/Image/svg/2.svg">
                         </div>
                     </div>
                     <div class="wardrobe__box">
@@ -158,7 +150,7 @@
                             <p class="wardrobe__text wardrobe__text_right">Наши конструктора создадут Вашу мебель с нуля. Каждый модуль уникален!</p>    
                         </div>
                         <div>
-                            <img class="wardrobe__num wardrobe__num_right" src="Image/svg/4.svg">
+                            <img class="wardrobe__num wardrobe__num_right" src="../static/Image/svg/4.svg">
                         </div>
                     </div>
                     <div class="wardrobe__box">
@@ -167,7 +159,7 @@
                             <p class="wardrobe__text wardrobe__text_right">Наш специалист свяжется с вами для согласования даты доставки и монтажа, либо вы сможете сделать это самостоятельно через мобильное приложение.</p>    
                         </div>
                         <div>
-                            <img class="wardrobe__num wardrobe__num_right" src="Image/svg/6.svg">
+                            <img class="wardrobe__num wardrobe__num_right" src="../static/Image/svg/6.svg">
                         </div>
                     </div>
                     <div class="wardrobe__box">
@@ -176,7 +168,7 @@
                             <p class="wardrobe__text wardrobe__text_right">Наши специалисты готовы ответить на все ваши вопросы и помочь решить любые проблемы. Мы всегда на связи и будем рады вам помочь!</p>    
                         </div>
                         <div>
-                            <img class="wardrobe__num wardrobe__num_right" src="Image/svg/8.svg">
+                            <img class="wardrobe__num wardrobe__num_right" src="../static/Image/svg/8.svg">
                         </div>
                     </div>
                 </div>
@@ -184,20 +176,32 @@
         </div>
     </main>
     <footer class="footer">
-        <div class="footer__wrapper">
+        <div class="footer__wrapper wrapper">
             <div class="footer__left">
                 <div class="footer__logo">
-                    <img class="footer__svg" src="Image/svg/i.svg">
-                    <img class="footer__svg" src="Image/svg/s.svg">
-                    <img class="footer__svg" src="Image/svg/t.svg">
-                    <img class="footer__svg" src="Image/svg/label.svg">
-                    <img class="footer__svg" src="Image/svg/upK.svg">
-                    <img class="footer__svg footer__svg_downK" src="Image/svg/downK.svg">
+                    <img class="footer__label" src="../static/Image/svg/labelFooter.svg">
                 </div>
                 <p class="footer__text footer__text_record">Записаться на консультацию</p>
                 <p class="footer__text footer__text_about">О нас</p>
-                <p class="footer__download footer__fatty">Скачать приложение</p>
-                <img class="footer__social" src="Image/svg/social.svg">
+                <p class="footer__downloadText footer__fatty">Скачать приложение</p>
+                <div class="footer__download">
+                    <div class="footer__inner">
+                        <div class="footer__container">
+                            <img class="footer__apple" src="../static/Image/svg/apple.svg">
+                            <div class="footer__wrap footer__wrap_left">
+                                <p class="footer__downloadApplication">Download on the</p>
+                                <p class="footer__appStore">App Store</p>
+                            </div>
+                        </div>
+                        <div class="footer__container">
+                            <img class="footer__google" src="../static/Image/svg/google.svg">
+                            <div class="footer__wrap footer__wrap_right">
+                                <p class="footer__get">GET IT ON</p>
+                                <p class="footer__googlePlay">Google Play</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer__center">
                 <div class="footer__box">
@@ -215,9 +219,16 @@
             </div>
             <div class="footer__right">
                 <p class="footer__connection footer__fatty">Связаться с нами</p>
-                <img class="footer__social footer__social_right" src="Image/svg/social.svg">
-                <p class="footer__text">ООО “Исток-Мебель” 2024</p>
-                <p class="footer__confidentiality footer__text">Политика Конфиденциальности</p>
+                <div class="footer__social">
+                    <img class="footer__socialLogo" src="../static/Image/svg/whatsapp.svg">
+                    <img class="footer__socialLogo" src="../static/Image/svg/call.svg">
+                    <img class="footer__socialLogo" src="../static/Image/svg/vk.svg">
+                    <img class="footer__socialLogo" src="../static/Image/svg/tele.svg">
+                </div>
+                <p class="footer__phone">8 (800) 222 00-62 </p>
+                <p class="footer__comment">Звонок бесплатный 24/7</p>
+                <p class="footer__name footer__text">ООО “Исток-Мебель” 2024</p>
+                <p class="footer__confidentiality">Политика Конфиденциальности</p>
             </div>
         </div>
     </footer>
