@@ -10,24 +10,22 @@
     margin: 0 auto;    
 }
 
+.header {
+    background: #EDEBEC;
+}
+
 .header__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 24px 120px;
+    padding: 24px 120px 22px;
 }
 
 .header__logo {
-    width: 216px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-}
-
-.header__svg_downK {
-    position: absolute; 
-    margin: 28px 0 0 180px;
 }
 
 .header__list {
@@ -68,6 +66,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.video__play {
+    display: block;
 }
 
 .description {
@@ -122,27 +124,33 @@
 }
 
 .advertising {
+    min-height: 96px;
     display: flex;
     align-items: center;
-    margin: 123.88px 0 72px;
-    padding: 25px 120px 23px;
-    background: var(--braght-sand, #FBCC5F);
+    margin: 123.88px 0 128px;
+    padding: 0px 120px 0px;
+    background: #FFE660;
 }
 
 .advertising__action {
-    color: #252D39;
-    font-size: 40px;
+    position: absolute;
+    margin-top: 0; 
+    margin-bottom: 0;
+    color: #FFF;
+    font-size: 128px;
     font-style: normal;
     font-weight: 800;
-    line-height: normal;
-    letter-spacing: 3.2px;
+    line-height: 1%;
+    letter-spacing: 10.24px;
 }
 
 .advertising__promotion {
-    width: 632px;
-    margin: 0 372px 0 252px;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
     color: #252D39;
-    font-size: 24px;
+    font-family: "Gothic A1";
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -167,7 +175,6 @@
 }
 
 .catalog__name {
-    position: absolute;
     color: #133922;
     font-size: 32px;
     font-style: normal;
@@ -175,16 +182,12 @@
     line-height: normal;
 }
 
-.catalog__background {
-    margin: 21px 0 0 35px;
-}
-
 .catalog__inner {
     display: flex;
     align-self:  center;
     min-height: 48px;
     justify-content: center;
-    margin: 83px 0 224px;
+    margin: 93.44px 0 124px;
 }
 
 .catalog__open {
@@ -207,7 +210,7 @@
 .advantages__backgroundLabel {
     position: absolute;
     z-index: -1;
-    margin: 138.84px 0 0 895.06px;
+    margin: 331px 0 0 1069px;
     opacity: 0.15;
 }
 
@@ -221,7 +224,7 @@
 }
 
 .advantages__head {
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     color: #252D39;
     text-align: center;
     font-size: 40px;
@@ -250,9 +253,8 @@
 }
 
 .advantages__btn {
-    margin: 120px 0 46px 564px;
-    border-radius: 16px;
-    border: 2px solid #5F700D;
+    margin: 80px 0 70px 564px;
+    border: 0px solid #8BA21D;
     background: #8BA21D;
     cursor: pointer;
 }
@@ -339,25 +341,17 @@
 }
 
 .footer {
-    background: #F4EAD7;
+    background: #EDEBEC;
 }
 
 .footer__wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 62px 120px 72px;
+    padding: 64px 120px 77px;
 }
 
-.footer__logo {
-    width: 216px;
-    display: flex;
-    justify-content: space-between;
+.footer__label {
     cursor: pointer;
-}
-
-.footer__svg_downK {
-    position: absolute; 
-    margin: 28px 0 0 180px;
 }
 
 .footer__text {
@@ -368,6 +362,14 @@
     line-height: normal;
 }
 
+.footer__text_record {
+    margin: 40.29px 0 32px;
+}
+
+.footer__downloadText {
+    margin: 74px 0 26px;
+}
+
 .footer__fatty {
     color: #252D39;
     font-size: 32px;
@@ -376,12 +378,71 @@
     line-height: normal;
 }
 
-.footer__text_record {
-    margin: 39px 0 32px;
+.footer__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 19.23px;
 }
 
-.footer__download {
-    margin: 77px 0 18px;
+.footer__container {
+    display: flex;
+    border-radius: 14.425px;
+    background: #AA967B;
+    cursor: pointer;
+}
+
+.footer__apple {
+    margin-left: 18.03px;
+}
+
+.footer__wrap_left {
+    margin: 17px 50px 18px 14.34px;
+}
+
+.footer__google {
+    margin: 18.3px 0 20.89px 17.47px;
+}
+
+.footer__wrap_right {
+    margin: 14px 25px 18px 4.47px;
+}
+
+.footer__appStore {
+    color: #FFF;
+    font-family: "Gothic A1";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.footer__get {
+    color: #FFF;
+    font-family: "Gothic A1";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 175% */
+}
+
+.footer__googlePlay {
+    white-space: nowrap;
+    color: #FFF;
+    font-family: "Gothic A1";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    
+}
+
+.footer__downloadApplication {
+    color: #FFF;
+    font-family: "Gothic A1";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
 }
 
 .footer__catalog {
@@ -394,11 +455,62 @@
     gap: 24px;
 }
 
+.footer__item {
+    cursor: pointer;
+}
+
+.footer__social {
+    display: flex;
+    gap: 16px;
+    margin: 30px 0 56px;
+}
+
+.footer__socialLogo {
+    display: block;
+    cursor: pointer;
+}
+
+.footer__phone {
+    color: #252D39;
+    font-family: "Gothic A1";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.footer__comment {
+    color: #252D39;
+    font-family: "Gothic A1";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.footer__name{
+    margin: 55px 0 16px;
+}
+
 .footer__confidentiality {
-    margin-top: 16px;
     text-decoration: underline;
+    color: #252D39;
+    font-family: "Gothic A1";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
 }
 
 .footer__social_right {
     margin: 46px 0 148px;
+}
+
+.footer__center {
+    margin-top: 39px;
+}
+
+.footer__right {
+    margin-top: 39px;
 }
