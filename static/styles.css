@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     width: 100vw;
     margin: 0 auto;
-    font-family: Gothic A1;
+    font-family: "Gothic A1", sans-serif;
+    color: #252D39;
 }
 
 .header__wrap {
@@ -29,8 +31,8 @@ body {
     font-weight: 400;
     line-height: 25px;
     text-align: left;
-    color: #000000;
     text-decoration: none;
+    color: #252D39;
 }
 
 .header__link:hover {
@@ -65,7 +67,6 @@ body {
 
 .advertising__footnote {
     color: #EDEBEC;
-    font-family: Gothic A1;
     font-size: 30px;
     font-weight: 600;
     line-height: 37.5px;
