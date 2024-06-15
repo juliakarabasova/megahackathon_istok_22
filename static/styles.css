@@ -43,9 +43,20 @@ body {
 .advertising {
     background-image: url(images/advertising.jpg);
     background-size: cover;
-    height: 936px;
+    height: 504px;
     padding-top: 104px;
     position: relative; 
+}
+
+.advertising::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #5F4624;
+    opacity: 76%;
 }
 
 .advertising__title {
@@ -82,36 +93,8 @@ body {
     justify-content: space-between;
     position: absolute;
     z-index: 1;
-    top: 520px;
+    top: 100px;
     left: 121px;
-}
-
-.search-string {
-    padding: 80px 120px;
-    display: flex;
-
-}
-
-.search-string__input {
-    height: 72px;
-    width: 1488px;
-    border: 1px solid #252D39;
-    border-right: none;
-}
-
-.search-string__input::placeholder {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 48px;
-    color:#707070;
-    padding-left: 24px;
-}
-
-.search-string_btn {
-    cursor: pointer;
-    border: 1px solid #252D39;
-    border-left: none;
-    padding-right: 40px;
 }
 
 .section-title {
@@ -136,7 +119,7 @@ body {
 }
 
 .kitchens {
-    padding: 191px 0px 191px 120px;
+    padding: 107px 0px 187px 120px;
     display: flex;
     gap: 80px;
 }
@@ -294,11 +277,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-top: 34px;
 }
 
 .footer__contacts {
     display: flex;
     flex-direction: column;
+    padding-top: 36px;
 }
 
 .footer__contacts_icon {
@@ -312,7 +297,6 @@ body {
     font-size: 24px;
     font-weight: 400;
     line-height: 30px;
-    color: #252D39;
     margin-top: 65px;
 }
 
@@ -353,7 +337,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;  
-    color: #252D39;
 }
 
 .hero_text_span {
@@ -362,7 +345,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
-    color: #252D39;
 }
 
 .target {
@@ -380,13 +362,11 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: center;
-    color: #252D39;
 }
 
 .target_text_wrapp {
     width: 1252px;
     margin: 0 auto;
-    color: #252D39;
 }
 
 .target_text {
@@ -395,7 +375,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: center;
-    color: #252D39;
 }
 
 .values {
@@ -418,7 +397,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
-    color: #252D39;
 }
 
 .values_main_text {
@@ -427,7 +405,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
-    color: #252D39;
 }
 .values_title {
     font-size: 32px;
@@ -435,7 +412,6 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
-    color: #252D39;
 }
 
 .values_text {
@@ -444,7 +420,7 @@ body {
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
-    color: #252D39;
+
 }
 
 .simplicity_container {
@@ -499,7 +475,6 @@ body {
 }
 
 .promo_text {
-    color: #252D39;
     font-size: 40px;
     font-weight: 400;
     line-height: 50px;
@@ -523,7 +498,6 @@ body {
     font-weight: 400;
     line-height: 37.5px;
     text-align: left;
-    color: #252D39;
 }
 
 .options_text_span {
@@ -531,7 +505,6 @@ body {
     font-weight: 700;
     line-height: 37.5px;
     text-align: left;  
-    color: #252D39;  
 }
 
 .furniture_show {
