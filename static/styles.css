@@ -5,7 +5,7 @@
 }
 
 body {
-    width: 100vw;
+    width: 1728px;
     margin: 0 auto;
     font-family: "Gothic A1", sans-serif;
     color: #252D39;
@@ -44,11 +44,10 @@ body {
     background-image: url(images/advertising.jpg);
     background-size: cover;
     height: 504px;
-    padding-top: 104px;
     position: relative; 
 }
 
-.advertising::after {
+.advertising__container_one::after {
     content: "";
     position: absolute;
     top: 0;
@@ -59,12 +58,35 @@ body {
     opacity: 76%;
 }
 
+.advertising__container_two::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #205B2D;
+    opacity: 76%;
+}
+
 .advertising__title {
     font-size: 40px;
     font-weight: 600;
     line-height: 50px;
     text-align: left;
     color: #EDEBEC;
+    position: absolute;
+    z-index: 1;
+}
+
+.advertising__title_one {
+    margin-top: 90px;
+    margin-left: 121px;
+}
+
+.advertising__container_two {
+    padding-top: 161px;
+    padding-left: 121px;
 }
 
 .advertising__paragraph {
@@ -73,7 +95,17 @@ body {
     line-height: 37.5px;
     text-align: left;
     color: #EDEBEC;
-    margin-top: 40px;
+    position: absolute;
+    z-index: 1;
+}
+
+.advertising__paragraph_one {
+    margin-top: 238px;
+    margin-left: 121px;
+}
+
+.advertising__paragraph_two {
+    padding-top: 98px;
 }
 
 .advertising__footnote {
@@ -82,19 +114,35 @@ body {
     font-weight: 600;
     line-height: 37.5px;
     text-align: left;
-    margin-top: 46px;
+    
     cursor: pointer;
+    position: absolute;
+    z-index: 1;
+}
+
+.advertising__footnote_one {
+    margin-top: 406px;
+    margin-left: 121px;
+}
+
+.advertising__footnote_two {
+    margin-top: 245px;
 }
 
 .advertising__container {
-    max-width: 1506px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    display: none;
     position: absolute;
-    z-index: 1;
-    top: 100px;
-    left: 121px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.advertising_active {
+    display: block;
 }
 
 .section-title {
@@ -225,12 +273,12 @@ body {
 
 .footer {
     padding: 62px 120px 72px 120px;
+    gap: 160px;
 }
 
 .footer__wrap {
-    
     display: flex;
-    gap: 250px;
+    justify-content: space-between;
 }
 
 .footer__link {
@@ -349,11 +397,8 @@ body {
 
 .target {
     background-color:#F4EAD7;
-    width: 100vw;
-    margin: 0 auto;
     padding-top: 34px;
     padding-bottom: 51px;
-
 }
 
 .target_title {
@@ -442,6 +487,40 @@ body {
     text-align: end;
 }
 
+.team {
+    padding: 62px 120px 143px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
+}
+
+.team_members_wrap {
+    display: flex;
+    gap: 48px;
+}
+
+.team_member {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.team_member_name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.team_member_post {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
 .awareness_container {
     display: flex;
     flex-direction: column;
@@ -456,7 +535,6 @@ body {
 }
 
 .model {
-    width: 1728px;
     height: 936px;
     display: flex;
     align-items: center;
