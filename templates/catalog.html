@@ -64,7 +64,7 @@
                         <h3 class="advertising__paragraph advertising__paragraph_one">
                             Специальное предложение: Расскажите о нас своим близким, и если они запишутся на<br> проектирование мебели до 1 июля, они получат скидку 10%, а Вы бонус 10 000 тыс. рублей на Вашу<br> карту!
                         </h3>
-                        <p class="advertising__footnote advertising__footnote_one">
+                        <p class="advertising__footnote advertising__footnote_one" onclick="openPopup()">
                             Подробнее
                         </p>
                     </div> 
@@ -73,12 +73,34 @@
                             Заказывайте все в одном месте!
                         </h1>
                         <h3 class="advertising__paragraph advertising__paragraph_two">
-                            Специальное предложение: При оформлении заказа от 50 000 рублей, скидка на покупку техники и<br> сантехники 10%
+                            Специальное предложение: При оформлении заказа от 50 000 рублей, скидка на покупку техники и<br>сантехники 10%
                         </h3>
-                        <p class="advertising__footnote advertising__footnote_two">
+                        <p class="advertising__footnote advertising__footnote_two" onclick="openPopup()">
                             Подробнее
                         </p>
                     </div> 
+                    <div class="advertising_popup-overlay">
+                        <div class="advertising_popup popup">
+                            <button class="advertising_popup_close" onclick="closePopup()">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.1431 0.857178L0.857422 23.1429" stroke="#252D39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M0.857422 0.857178L23.1431 23.1429" stroke="#252D39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <h1 class="advertising_popup_title">
+                                Поделитесь теплом домашнего уюта<br>с близкими - и пусть каждый день будет особенным!
+                            </h1>
+                            <h3 class="advertising_popup_paragraph">
+                                <span class="advertising_popup_span">Специальное предложение:</span> Расскажите о нас своим близким, и если они запишутся на<br>проектирование мебели до 1 июля, они получат скидку 10%, а Вы бонус 10 000 тыс.<br>рублей на Вашу карту!
+                            </h3>
+                            <p class="advertising_popup_footnote">
+                                *Скидка 10% будет доступна сразу при заключение договора
+                            </p>
+                            <p class="advertising_popup_footnote">
+                                **Вознаграждение 10 000 тыс. рублей выплачивается после установки мебели, наши специалисты свяжутся<br>для уточнения деталей и перевода.
+                            </p>
+                        </div>
+                    </div>
                 </section>
                 <section class="kitchens">
                     <div class="kitchens_title_wrapp">
@@ -224,5 +246,6 @@
             </footer>
         </div>
         <script src="slider.js"></script>
+        <script src="popup.js"></script>
     </body>
 </html>
