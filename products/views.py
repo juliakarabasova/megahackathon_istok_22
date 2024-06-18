@@ -7,7 +7,7 @@ from products.models import Product
 # Create your views here.
 class HomePageView(ListView):
     model = Product
-    template_name = 'main__index.html'
+    template_name = 'catalog.html'
     context_object_name = 'products'
 
     def get_queryset(self):
