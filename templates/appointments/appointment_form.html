@@ -1,0 +1,10 @@
+<!--{% extends 'flatpages/default.html' %}-->
+
+{% block content %}
+<h2>Создание встречи</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}
