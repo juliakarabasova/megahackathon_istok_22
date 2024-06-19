@@ -55,7 +55,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'istok.wsgi.application'
 
-
 # Database
 DATABASES = {
     'default': {
@@ -93,7 +92,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -122,3 +120,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your-email@example.com'
 EMAIL_HOST_PASSWORD = 'your-email-password'
+
+AUTH_USER_MODEL = 'users.CustomUser'
