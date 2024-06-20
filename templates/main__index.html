@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/main__style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <title>Главный экран</title>
-</head>
-<body class="body">
-    <header class="header">
-        <div class="header__wrap wrapper">
-            <div class="header__logo">
-                <img class="header__svg" src="../static/../static/Image/svg/labelheader.svg">
-            </div>
-            <ul class="header__list">
-                <li class="header__item">Каталог</li>
-                <li class="header__item">Записаться на консультацию</li>
-                <li class="header__item">О нас</li>
-                <li class="header__item">Приложение</li>
-                <li class="header__item header__item_fatty">Регистрация/Вход</li>
-            </ul>
-        </div>
-    </header>
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+ISTOK
+{% endblock title %}
+
+{% block content %}
     <main class="main wrapper">
         <article class="video">  
             <img class="video__play" src="../static/Image/png/video.png">
@@ -175,62 +156,4 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer__wrapper wrapper">
-            <div class="footer__left">
-                <div class="footer__logo">
-                    <img class="footer__label" src="../static/Image/svg/labelFooter.svg">
-                </div>
-                <p class="footer__text footer__text_record">Записаться на консультацию</p>
-                <p class="footer__text footer__text_about">О нас</p>
-                <p class="footer__downloadText footer__fatty">Скачать приложение</p>
-                <div class="footer__download">
-                    <div class="footer__inner">
-                        <div class="footer__container">
-                            <img class="footer__apple" src="../static/Image/svg/apple.svg">
-                            <div class="footer__wrap footer__wrap_left">
-                                <p class="footer__downloadApplication">Download on the</p>
-                                <p class="footer__appStore">App Store</p>
-                            </div>
-                        </div>
-                        <div class="footer__container">
-                            <img class="footer__google" src="../static/Image/svg/google.svg">
-                            <div class="footer__wrap footer__wrap_right">
-                                <p class="footer__get">GET IT ON</p>
-                                <p class="footer__googlePlay">Google Play</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__center">
-                <div class="footer__box">
-                    <p class="footer__catalog footer__fatty">Каталог</p>
-                    <ul class="footer__list">
-                        <li class="footer__item footer__text">Кухня</li>
-                        <li class="footer__item footer__text">Гардеробы</li>
-                        <li class="footer__item footer__text">Стеллажи</li>
-                        <li class="footer__item footer__text">Ванные комнаты</li>
-                        <li class="footer__item footer__text">Комоды</li>
-                        <li class="footer__item footer__text">Мебель в детскую</li>
-                        <li class="footer__item footer__text">Комплексная меблировка</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer__right">
-                <p class="footer__connection footer__fatty">Связаться с нами</p>
-                <div class="footer__social">
-                    <img class="footer__socialLogo" src="../static/Image/svg/whatsapp.svg">
-                    <img class="footer__socialLogo" src="../static/Image/svg/call.svg">
-                    <img class="footer__socialLogo" src="../static/Image/svg/vk.svg">
-                    <img class="footer__socialLogo" src="../static/Image/svg/tele.svg">
-                </div>
-                <p class="footer__phone">8 (800) 222 00-62 </p>
-                <p class="footer__comment">Звонок бесплатный 24/7</p>
-                <p class="footer__name footer__text">ООО “Исток-Мебель” 2024</p>
-                <p class="footer__confidentiality">Политика Конфиденциальности</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock content %}
