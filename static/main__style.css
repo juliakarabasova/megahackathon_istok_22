@@ -1,5 +1,5 @@
 * {
-    font-family: "Gothic A1";
+    font-family: "Gothic A1", sans-serif;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -124,7 +124,7 @@
 }
 
 .advertising {
-    min-height: 96px;
+    height: 96px;
     display: flex;
     align-items: center;
     margin: 123.88px 0 128px;
@@ -137,9 +137,9 @@
     margin-top: 0; 
     margin-bottom: 0;
     color: #FFF;
-    font-size: 128px;
+    font-size: 139px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1%;
     letter-spacing: 10.24px;
 }

@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Gothic A1", sans-serif;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background: #fff;
+    border: 1px solid #AA967B;
+    height: 18px;
+    width: 18px;
+    position: relative;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #AA967B;
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    position: relative;
+}
+
+  input[type="radio"]::before,
+  input[type="checkbox"]::before{
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+input[type="radio"]:checked::before {
+    border: 5px solid transparent;
+    border-radius: 100%;
+    background: #AA967B;
+    margin: 2px;
+}
+
+input[type="checkbox"]:checked::before {
+    border-right: 5px solid #AA967B;
+    border-bottom: 6px solid #AA967B;
+    height: 90%;
+    width: 30%;
+    transform: rotate(50deg) translateY(-20%) translateX(-10%);
+}
+
+.close__connection {
+    position: absolute;
+    margin: 8px 0 0 592px;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 720px;
+    height: 568px;
+    padding: 24px 72px 48px;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.connection__title {
+    text-align: center;
+    color: #252D39;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%;
+}
+
+.connection__text {
+    max-width: 576px;
+    margin: 0 auto;
+    color: #252D39;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+}
+
+.connection__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 26px;
+}
+
+.connection__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.connection__head {
+    color: #252D39;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 200%;
+}
+
+.connection__input {
+    display: inline-flex;
+    padding: 8px 56px 8px 12px;
+    align-items: center;
+    border: 1px solid #AA967B;
+    color: #707070;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+}
+
+.connection__help {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+
+.connection__help_checkboxRadio {
+    margin-bottom: 17px;
+}
+
+.connection__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #252D39;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 200%;
+}
+
+.connection__btn {
+    display: inline-flex;
+    padding: 2px 71px;
+    margin-top: 2px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid #8BA21D;
+    background: #FFF;   
+    color: #8BA21D;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 200%;
+    cursor: pointer;
+}
+
+.loginRegistration {
+    width: 464px;
+    height: 600px;
+    padding: 24px 56px 76px;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.loginRegistration__close {
+    position: absolute;
+    margin-left: 360px;
+    cursor: pointer;
+}
+
+.loginRegistration__title {
+    margin-bottom: 32px;
+    color: #252D39;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.loginRegistration__numPhone {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginRegistration__head {
+    color:#252D39;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 200%;
+}
+
+.loginRegistration__phone {
+    display: flex;
+    width: 164px;
+    padding: 8px 0px 8px 12px;
+    align-items: center;
+    border: 1px solid #AA967B;
+    color: #707070;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+}
+
+.loginRegistration__input {
+    display: inline-flex;
+    padding: 8px 0 8px 12px;
+    align-items: center;
+    color: #252D39;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    border: 1px solid #AA967B;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+}
+
+.loginRegistration__code {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.loginRegistration__take {
+    display: inline-flex;
+    padding: 8px 30px 8px 29px;
+    width: 164px;
+    justify-content: center;
+    align-items: center;
+    background: #8BA21D;
+    border: 0;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 200%;
+    cursor: pointer;
+}
+
+.loginRegistration__or {
+    display: block;
+    text-align: center;
+    margin: 32px 0;
+    color: #707070;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+}
+
+.loginRegistration__btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 8px 0;
+    flex-shrink: 0;
+    border: 0;
+    background: #AA967B;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    cursor: pointer;
+}
+
+.loginRegistration__box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.loginRegistration__btn_google {
+    padding-left: 24px;
+}
+
+.loginRegistration__btn_yandex {
+    padding-left: 26px;
+    gap: 23px;
+}
+
+.loginRegistration__btn_apple {
+    padding-left: 30px;
+}
