@@ -7,8 +7,11 @@ ISTOK
 {% block content %}
     <main class="main wrapper">
         <article class="video">  
-            <img class="video__play" src="../static/Image/png/video.png">
-        </article>
+    <video class="video__play" autoplay muted loop>
+        <source src="/static/video/videoMain.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</article>
         <article class="description">
             <section class="description__wrapper">
                 <p class="description__text"><span class="description__text description__text_fatty">Компания ISTOK</span> — это стартап опытной команды профессионалов. Мы создали бренд, предоставляющий высококачественный сервис с использованием современных технологий как для взаимодействия с клиентами, так и для организации производства.</p>

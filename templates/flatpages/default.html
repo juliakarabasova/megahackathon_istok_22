@@ -4,19 +4,55 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../static/styles.css">
-        <link rel="stylesheet" href="../static/fonts.css">
-        <link rel="stylesheet" href="../static/main__style.css">
+        <link rel="stylesheet" href="/static/styles.css">
+        <link rel="stylesheet" href="/static/main__style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="/static/styleconnection.css">
+        <link rel="stylesheet" href="/static/personalAccountProfile.css">
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
         {% load static %}
         <link href="{% static 'styles.css' %}" rel="stylesheet" />
 
         <title>{% block title %}{% endblock title %}</title>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
-        </style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+        /* Стили для модального окна */
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    transform: translateY(50%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    </style>
 
         <!--Чат поддержки-->
         <script src="//code.jivo.ru/widget/DpEUU3XOG1" async></script>
@@ -55,14 +91,20 @@
                                 <a class="header__link" href="{% url 'index' %}">Каталог</a>
                             </li>
                             <li class="header__item">
-                                <a class="header__link" href="{% url 'appointment_list' %}">Записаться на консультацию</a>
+                                <a id="consultationBtn" class="header__link" href="#">Записаться на консультацию</a>
                             </li>
                             <li class="header__item">
                                 <a class="header__link" href="{% url 'about_us' %}">О нас</a>
                             </li>
+                            {% if user.is_authenticated %}
                             <li class="header__item">
-                                <a class="header__link" href="{% url 'signup' %}">Регистрация/вход</a>
+                                <a class="header__link" href="{% url 'profile' %}">Профиль</a>
                             </li>
+                            {% else %}
+                            <li class="header__item">
+                                <a id="loginBtn" class="header__link" href="#">Регистрация/вход</a>
+                            </li>
+{% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -96,16 +138,16 @@
                                 </svg>
                             </li>
                             <li class="footer__item">
-                                <a class="footer__link" href="#">Записаться на консультацию</a>
+                               <a id="consultationBtnFooter" class="footer__link" href="#">Записаться на консультацию</a>
                             </li>
                             <li class="footer__item">
-                                <a class="footer__link" href="#">О нас</a>
+                                <a class="header__link" href="{% url 'about_us' %}">О нас</a>
                             </li>
                         </ul>
                         <h3 class="footer__title">Связаться с нами</h3>
                         <div class="footer__app_icon">
-                            <img src="../static/images/svg/appStore.svg" class="icon_img" alt="icons" width="256" height="88">
-                            <img src="../static/images/svg/googlePlay.svg" class="icon_img" alt="icons" width="256" height="88">
+                            <img src="/static/images/svg/appStore.svg" class="icon_img" alt="icons" width="256" height="88">
+                            <img src="/static/images/svg/googlePlay.svg" class="icon_img" alt="icons" width="256" height="88">
                         </div>
                     </div>
                     <ul class="footer__catalog">
@@ -137,10 +179,10 @@
                     <div class="footer__contacts">
                         <h3 class="footer__title">Связаться с нами</h3>
                         <div class="footer__contacts_icon">
-                            <img src="../static/images/svg/whatsApp.svg" class="icon_img" alt="icons" width="72" height="72">
-                            <img src="../static/images/svg/viber.svg" class="icon_img" alt="icons" width="72" height="72">
-                            <img src="../static/images/svg/vk.svg" class="icon_img" alt="icons" width="72" height="72">
-                            <img src="../static/images/svg/telegram.svg" class="icon_img" alt="icons" width="72" height="72">
+                            <img src="/static/images/svg/whatsApp.svg" class="icon_img" alt="icons" width="72" height="72">
+                            <img src="/static/images/svg/viber.svg" class="icon_img" alt="icons" width="72" height="72">
+                            <img src="/static/images/svg/vk.svg" class="icon_img" alt="icons" width="72" height="72">
+                            <img src="/static/images/svg/telegram.svg" class="icon_img" alt="icons" width="72" height="72">
                         </div>
                         <p class="footer__contacts_company"><span class="footer__contacts_company_span">8 (800) 222 00-62</span> <br>
                             Звонок бесплатный 24/7</p>
@@ -149,7 +191,233 @@
 
             </footer>
         </div>
-        <script src="slider.js"></script>
-        <script src="popup.js"></script>
+        <!-- Модальное окно -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content" id="modal1">
+            <span class="close">&times;</span>
+            <article class="loginRegistration">
+                <h1 class="loginRegistration__title">Вход / Регистрация</h1>
+                <form class="loginRegistration__numPhone">
+                    <label class="loginRegistration__head">Номер телефона</label>
+                    <input class="loginRegistration__input" type="text" placeholder="+7 (999)999-99-99">
+                </form>
+                <form class="loginRegistration__code">
+                    <input class="loginRegistration__phone" type="text" placeholder="Код">
+                    <input class="loginRegistration__take" type="button" value="Получить код">
+                </form>
+                <span class="loginRegistration__or">ИЛИ</span>
+                <div class="loginRegistration__box">
+                    <button class="loginRegistration__btn loginRegistration__btn_google"><img src="/static/styleconnection/google.svg">Войти с помощью Google</button>
+                    <button class="loginRegistration__btn loginRegistration__btn_yandex"><img src="/static/styleconnection/yandex.svg">Войти с помощью Yandex</button>
+                    <button class="loginRegistration__btn loginRegistration__btn_apple"><img src="/static/styleconnection/apple.svg">Войти с помощью Apple ID</button>
+                </div>
+            </article>
+        </div>
+        <div class="wrapper" id="modal2">
+            <span class="close">&times;</span>
+            <article class="connection">
+                <h1 class="connection__title">Связаться с нами</h1>
+                <p class="connection__text">Закажите выезд нашего специалиста, и мы предоставим вам уникальную скидку в 10% на заказ от любой суммы. Оформите заявку в числе первых!</p>
+                <section class="connection__wrapper">
+                    <form class="connection__field">
+                        <label class="connection__head">Имя</label>
+                        <input class="connection__input" type="text" placeholder="Как к Вам обращаться?">
+                    </form>
+                    <form class="connection__field">
+                        <label class="connection__head">Номер телефона</label>
+                        <input class="connection__input" type="text" placeholder="+7 (999)999-99-99">
+                    </form>
+                </section>
+                <section class="connection__wrapper">
+                    <form class="connection__dataInput" method="post">
+                        <fieldset class="connection__help">
+                            <legend class="connection__head connection__help_checkboxRadio">Что вас интересует?</legend>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Кухня
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Гардероб
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Прихожая
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Гостинная
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Полная меблировка
+                            </label>
+                        </fieldset>
+                    </form>
+                    <form class="connection__dataInput" method="post">
+                        <fieldset class="connection__help">
+                            <legend class="connection__head connection__help_checkboxRadio">Как с Вами связаться?</legend>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Позвонить
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Написать в Telegram
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Написать в WhatsApp
+                            </label>
+                            <input class="connection__btn" type="button" value="Отправить">
+                        </fieldset>
+                    </form>
+                </section>
+            </article>
+        </div>
+        </div>
+    </div>
+
+    <script>
+    // Получаем элементы
+var loginModal = document.getElementById("loginModal");
+var loginBtn = document.getElementById("loginBtn");
+var consultationBtn = document.getElementById("consultationBtn");
+var consultationBtnFooter = document.getElementById("consultationBtnFooter");
+var closeBtn = document.getElementsByClassName("close")[0];
+var modal1 = document.getElementById("modal1");
+var modal2 = document.getElementById("modal2");
+
+// Открываем модальное окно 1 при нажатии на кнопку "Регистрация/вход"
+if (loginBtn) {
+    // Если кнопка существует, добавляем обработчик событий
+    loginBtn.onclick = function() {
+        loginModal.style.display = "block";
+        modal1.style.display = "block";
+        modal2.style.display = "none";
+    }
+}
+
+// Открываем модальное окно 2 при нажатии на кнопку "Записаться на консультацию"
+
+consultationBtn.onclick = function() {
+    loginModal.style.display = "block";
+    modal1.style.display = "none";
+    modal2.style.display = "block";
+}
+
+// Обработчик для кнопки в футере
+consultationBtnFooter.onclick = function() {
+    loginModal.style.display = "block";
+    modal1.style.display = "none";
+    modal2.style.display = "block";
+}
+// Закрываем модальное окно при нажатии на крестик
+closeBtn.onclick = function() {
+    loginModal.style.display = "none";
+}
+var closeBtns = document.getElementsByClassName("close");
+
+
+// Закрываем модальное окно при нажатии вне его
+window.onclick = function(event) {
+    if (event.target == loginModal) {
+        loginModal.style.display = "none";
+    }
+}
+        // Генерация случайного 5-значного кода
+function generateCode() {
+  return Math.floor(10000 + Math.random() * 90000);
+}
+
+// Обработчик нажатия кнопки "Получить код"
+document.querySelector('.loginRegistration__take').addEventListener('click', function() {
+  const code = generateCode();
+  console.log("Сгенерированный код:", code);
+
+  // Сохраняем код для последующей проверки
+  window.generatedCode = code;
+});
+
+document.querySelector('.loginRegistration__phone').addEventListener('input', function() {
+  const enteredCode = this.value;
+  console.log("Введенный код:", enteredCode);
+
+  if(enteredCode.length === 5) {
+    if(parseInt(enteredCode) === window.generatedCode) {
+      console.log("Код верный");
+
+      // Получаем номер телефона
+      const phoneNumber = document.querySelector('.loginRegistration__input').value;
+      console.log("Номер телефона:", phoneNumber);
+
+      // Создаем или авторизуем пользователя
+      createOrLoginUser(phoneNumber);
+    } else {
+      console.log("Неверный код");
+    }
+  }
+});
+function createOrLoginUser(phoneNumber) {
+  console.log("Функция createOrLoginUser вызвана с номером:", phoneNumber);
+
+  const code = window.generatedCode;
+  if (!code) {
+    console.error("Ошибка: Код не был сгенерирован");
+    return;
+  }
+
+  console.log("Отправка запроса на сервер...");
+
+  fetch('{% url 'create_or_login_user' %}', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': getCookie('csrftoken')
+    },
+    body: JSON.stringify({
+      phone_number: phoneNumber,
+      code: code
+    })
+  })
+  .then(response => {
+    console.log("Получен ответ от сервера", response.status);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.success) {
+      console.log('Пользователь успешно создан/авторизован');
+      // Перенаправление или обновление UI
+      window.location.reload();
+    } else {
+      console.error('Ошибка:', data.error);
+      // Показать сообщение об ошибке пользователю
+    }
+  })
+  .catch(error => {
+    console.error('Ошибка при отправке запроса:', error);
+    // Показать сообщение об ошибке пользователю
+  });
+}
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+};
+
+    </script>
     </body>
 </html>
