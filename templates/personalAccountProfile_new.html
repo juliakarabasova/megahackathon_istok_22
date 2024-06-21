@@ -1,0 +1,29 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+ISTOK
+{% endblock title %}
+
+{% block content %}
+        <main>
+            <div class="wrapper">
+            <article class="profile">
+                    <h1 class="profile__head">ПРОФИЛЬ</h1>
+                    <img class="profile__photo" src="/static/Profile/png/photo.png">
+                    <nav>
+                        <ul class="profile__list">
+                            <li class="profile__item link_active" onclick="drawMainInfo()">Основная Информация</li>
+                            <li class="profile__item" onclick="drawOrder()">Заказы</li>
+                            <li class="profile__item" onclick="drawBonuses()">Бонусы</li>
+                            <li class="profile__item">Реферальная программа</li>
+                            <li class="profile__item">Связаться с нами</li>
+                        </ul>
+                    </nav>
+                    <h3 class="profile__calendarTitle">Календарь встреч</h3>
+            </article>
+            <article class="main__inner">       
+            </article>
+        </div>
+        </main>
+        <script src="profile.js"></script>
+{% endblock content %}

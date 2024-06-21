@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styleconnection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <img class="close__connection" src="../static/styleconnection/close.svg">
+            <article class="connection">
+                <h1 class="connection__title">Связаться с нами</h1>
+                <p class="connection__text">Закажите выезд нашего специалиста, и мы предоставим вам уникальную скидку в 10% на заказ от любой суммы. Оформите заявку в числе первых!</p>
+                <section class="connection__wrapper">    
+                    <form class="connection__field">
+                        <label class="connection__head">Имя</label>
+                        <input class="connection__input" type="text" placeholder="Как к Вам обращаться?">
+                    </form>
+                    <form class="connection__field">
+                        <label class="connection__head">Номер телефона</label>
+                        <input class="connection__input" type="text" placeholder="+7 (999)999-99-99">
+                    </form>
+                </section>
+                <section class="connection__wrapper">
+                    <form class="connection__dataInput" method="post">
+                        <fieldset class="connection__help">
+                            <legend class="connection__head connection__help_checkboxRadio">Что вас интересует?</legend>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Кухня
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Гардероб
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Прихожая
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Гостинная
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="checkbox" name="level">
+                                Полная меблировка
+                            </label>
+                        </fieldset>
+                    </form>
+                    <form class="connection__dataInput" method="post">
+                        <fieldset class="connection__help">
+                            <legend class="connection__head connection__help_checkboxRadio">Как с Вами связаться?</legend>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Позвонить
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Написать в Telegram
+                            </label>
+                            <label class="connection__label">
+                                <input class="" type="radio" name="level">
+                                Написать в WhatsApp
+                            </label>
+                            <input class="connection__btn" type="button" value="Отправить">
+                        </fieldset>
+                    </form>
+                </section>
+            </article>
+        </div>
+        <article class="loginRegistration">
+            <img class="loginRegistration__close" src="../static/styleconnection/close.svg">
+            <h1 class="loginRegistration__title">Вход / Регистрация</h1>
+            <form class="loginRegistration__numPhone">
+                <label class="loginRegistration__head">Номер телефона</label>
+                <input class="loginRegistration__input" type="text" placeholder="+7 (999)999-99-99">
+            </form>
+            <form class="loginRegistration__code">
+                <input class="loginRegistration__phone" type="text" placeholder="Код">
+                <input class="loginRegistration__take" type="button" value="Получить код">
+            </form>
+            <span class="loginRegistration__or">ИЛИ</span>
+            <div class="loginRegistration__box">
+                <button class="loginRegistration__btn loginRegistration__btn_google"><img src="../static/styleconnection/google.svg">Войти с помощью Google</button>
+                <button class="loginRegistration__btn loginRegistration__btn_yandex"><img src="../static/styleconnection/yandex.svg">Войти с помощью Yandex</button>
+                <button class="loginRegistration__btn loginRegistration__btn_apple"><img src="../static/styleconnection/apple.svg">Войти с помощью Apple ID</button>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

@@ -33,8 +33,11 @@ class Appointment(models.Model):
 
     def save(self, *args, **kwargs):
         if self.contact_method == 'phone':
-            self.contact_info = self.user.profile.phone_number if self.user.profile.phone_number else self.contact_info
+            self.contact_info = self.user.phone_number if self.user.phone_number else self.contact_info
         super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.user} {self.date_time}'
 
 
 
