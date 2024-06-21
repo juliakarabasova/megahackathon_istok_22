@@ -53,12 +53,12 @@ ISTOK
                 </section>
             </section>
             <div class="catalog__inner">
-                <p class="catalog__open">Открыть весь каталог</p>
-                <img class="catalog__arrowRightGreen" src="../static/Image/svg/arrowRightGreen.svg">
+                <p class="catalog__open" data-url="{% url 'index' %}">Открыть весь каталог</p>
+                <img class="catalog__arrowRightGreen" src="/static/Image/svg/arrowRightGreen.svg">
             </div>
         </article>
         <div class="advantages">
-            <img class="advantages__backgroundLabel" src="../static/Image/png/backgroundLabel.png">
+            <img class="advantages__backgroundLabel" src="/static/Image/png/backgroundLabel.png">
             <h2 class="advantages__head">Почему выбирают нас?</h2>
             <div class="advantages__wrapper">
                 <div class="advantages__box">
@@ -76,14 +76,14 @@ ISTOK
             </div>
             <button class="advantages__btn"><span class="advantages__btnText">Связаться с нами</span></button> 
         </div>
-        <img src="../static/Image/png/kitchen1.png">
+        <img src="/static/Image/png/kitchen1.png">
         <div class="workOrder">
             <h3 class="workOrder__header">Как мы работаем?</h3>
             <div class="wardrobe__wrap">
                 <div class="workOrder__wrapper">
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="../static/Image/svg/1.svg">
+                            <img class="wardrobe__num" src="/static/Image/svg/1.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Онлайн консультация</h4>
@@ -92,7 +92,7 @@ ISTOK
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="../static/Image/svg/3.svg">
+                            <img class="wardrobe__num" src="/static/Image/svg/3.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Технический замер</h4>
@@ -101,7 +101,7 @@ ISTOK
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="../static/Image/svg/5.svg">
+                            <img class="wardrobe__num" src="/static/Image/svg/5.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Производство</h4>
@@ -110,7 +110,7 @@ ISTOK
                     </div>
                     <div class="wardrobe__box">
                         <div>
-                            <img class="wardrobe__num" src="../static/Image/svg/7.svg">
+                            <img class="wardrobe__num" src="/static/Image/svg/7.svg">
                         </div>
                         <div class="wardrobe__inner">
                             <h4 class="workOrder__title">Обратная связь</h4>
@@ -159,4 +159,25 @@ ISTOK
             </div>
         </div>
     </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var catalogOpen = document.querySelector('.catalog__open');
+
+    catalogOpen.addEventListener('click', function() {
+      var url = this.getAttribute('data-url');
+      window.location.href = url;
+    });
+  });
+  // Получаем все кнопки с классом "advantages__btn"
+var advantagesBtns = document.querySelectorAll('.advantages__btn');
+
+// Добавляем обработчик события ко всем кнопкам
+advantagesBtns.forEach(function(btn) {
+    btn.onclick = function() {
+        loginModal.style.display = "block";
+        modal1.style.display = "none";
+        modal2.style.display = "block";
+    };
+});
+</script>
 {% endblock content %}

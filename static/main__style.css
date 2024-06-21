@@ -514,3 +514,7 @@
 .footer__right {
     margin-top: 39px;
 }
+
+a.catalog__open {
+    text-decoration: none;
+}

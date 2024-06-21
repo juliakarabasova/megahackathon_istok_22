@@ -2,9 +2,10 @@
 #loginModal * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: "Gothic A1", sans-serif;
+    transform: translateY(50%);
 }
+
 
 #loginModal  input[type="checkbox"] {
     appearance: none;
