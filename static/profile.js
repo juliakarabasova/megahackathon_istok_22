@@ -1,32 +1,4 @@
-{% extends 'flatpages/default.html' %}
-
-{% block title %}
-ISTOK
-{% endblock title %}
-
-{% block content %}
-        <main class="profile">
-            <div class="wrapper">
-            <article class="profile">
-                    <h1 class="profile__head">ПРОФИЛЬ</h1>
-                    <img class="profile__photo" src="/static/Profile/png/photo.png">
-                    <nav>
-                        <ul class="profile__list">
-                            <li class="profile__item link_active" onclick="drawMainInfo()">Основная Информация</li>
-                            <li class="profile__item" onclick="drawOrder()">Заказы</li>
-                            <li class="profile__item" onclick="drawBonuses()">Бонусы</li>
-                            <li class="profile__item">Реферальная программа</li>
-                            <li class="profile__item">Связаться с нами</li>
-                        </ul>
-                    </nav>
-                    <h3 class="profile__calendarTitle">Календарь встреч</h3>
-            </article>
-            <article class="main__inner">
-            </article>
-        </div>
-        </main>
-<script>
-    const infoBlock = document.querySelector('.main__inner');
+const infoBlock = document.querySelector('.main__inner');
 const linkCategory = document.querySelectorAll('.profile__item');
 
 //снимаем .link_active с категории
@@ -52,29 +24,27 @@ function toggleLinkCategory()  {
 function drawMainInfo() {
     infoBlock.innerHTML = '';
     let mainInfo = `<div class="info_container">
-                    <form class="form" id="user-form" action="" method="post">
-                    {% csrf_token %}
+                    <form class="form" action="" method="">
                     <label class="form__label">
                         <legend class="form__legend">Фамилия</legend>
-                        <input class="form__input" type="text" name="second_name" value="{{ user.second_name }}">
+                        <input class="form__input" type="text" name="name">
                     </label>
                     <label class="form__label">
                         <legend class="form__legend">Имя</legend>
-                        <input class="form__input" type="text" name="first_name" value="{{ user.first_name }}">
+                        <input class="form__input" type="text" name="name">
                     </label>
                     <label class="form__label">
                         <legend class="form__legend">Отчество</legend>
-                        <input class="form__input" type="text" name="third_name" value="{{ user.third_name }}">
+                        <input class="form__input" type="text" name="name">
                     </label>
                     <label class="form__label">
                         <legend class="form__legend">Номер телефона</legend>
-                        <input class="form__input" type="text" name="phone_number" value="{{ user.phone_number }}">
+                        <input class="form__input" type="tel" name="name">
                     </label>
                     <label class="form__label">
                         <legend class="form__legend">Почта</legend>
-                        <input class="form__input" type="text" name="email" value="{{ user.email }}">
+                        <input class="form__input" type="email" name="name">
                     </label>
-                    <input class="change__btn" type="button" id="submit-btn" value="Изменить данные">
                     <section class="delivery">
                         <h3 class="delivery__address">Адреса доставки</h3>
                     </section>
@@ -159,32 +129,3 @@ document.addEventListener("DOMContentLoaded", function() {
     drawMainInfo();
     toggleLinkCategory();
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const submitBtn = document.getElementById('submit-btn');
-    const userForm = document.getElementById('user-form');
-
-    submitBtn.addEventListener('click', function() {
-        const formData = new FormData(userForm);
-        fetch('{% url "profile" %}', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Данные успешно обновлены!');
-            } else {
-                alert('Произошла ошибка при обновлении данных.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    });
-});
-</script>
-{% endblock content %}

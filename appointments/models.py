@@ -24,6 +24,8 @@ class Appointment(models.Model):
 
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     date_time = models.DateTimeField()
+    is_approved = models.BooleanField(default=False, verbose_name='Подтверждена')
+    accepted_datetime = models.DateTimeField(null=True, blank=True)
     notes = models.TextField(blank=True, verbose_name='Заметки')
     contact_method = models.CharField(max_length=10, choices=CONTACT_METHOD_CHOICES)  # Способ связи
     contact_info = models.CharField(max_length=255)  # Сам контакт
