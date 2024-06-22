@@ -61,28 +61,28 @@ let order = `<section class="order">
                             <h3 class="order__title">Заказ №598652086</h3>
                             <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф...</p>
                         </div>
-                        <img src="confirmation.svg" class="confirmation" alt="confirmation" width="56" height="56">
+                        <img src="/static/Profile/svg/confirmation.svg" class="confirmation" alt="confirmation" width="56" height="56">
                     </div>
                     <div class="order__box order__box_assembly">
                         <div class="order__box_text">
                             <h3 class="order__title">Заказ №598652086</h3>
                             <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф...</p>
                         </div>
-                        <img src="assembly.svg" class="assembly" alt="assembly" width="56" height="56">
+                        <img src="/static/Profile/svg/assembly.svg" class="assembly" alt="assembly" width="56" height="56">
                     </div>
                     <div class="order__box order__box_sending">
                         <div class="order__box_text">
                             <h3 class="order__title">Заказ №598652086</h3>
                             <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф...</p>
                         </div>
-                        <img src="sending.svg" class="sending" alt="sending" width="56" height="56">
+                        <img src="/static/Profile/svg/sending.svg" class="sending" alt="sending" width="56" height="56">
                     </div>
                     <div class="order__box order__box_received">
                         <div class="order__box_text">
                             <h3 class="order__title">Заказ №598652086</h3>
                             <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф...</p>
                         </div>
-                        <img src="received.svg" class="received" alt="received" width="56" height="56">
+                        <img src="/static/Profile/svg/received.svg" class="received" alt="received" width="56" height="56">
                     </div>
                 </section>`;
 infoBlock.innerHTML += order;
