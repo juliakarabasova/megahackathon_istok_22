@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from datetime import datetime
+
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_http_methods
 from django.views.generic import CreateView
+
+from appointments.models import Appointment
 from users.forms import CustomUserCreationForm
 from users.models import CustomUser
 from django.contrib.auth import login
@@ -66,5 +71,24 @@ class SignUp(CreateView):
     template_name = 'registration/signup.html'
 
 
+@require_http_methods(["GET", "POST"])
 def personal_account_profile(request):
-    return render(request, 'personalAccountProfile.html')
+    user = request.user
+    nearest_appointment = Appointment.objects.filter(user=user, date_time__gte=datetime.now()).order_by(
+        'date_time').first()
+
+    if request.method == 'POST':
+        print(request.POST.get('email', ''))
+        user.first_name = request.POST.get('first_name', '')
+        user.second_name = request.POST.get('second_name', '')
+        user.third_name = request.POST.get('third_name', '')
+        user.phone_number = request.POST.get('phone_number', '')
+        user.email = request.POST.get('email', '')
+        user.save()
+        return JsonResponse({'success': True})
+
+    context = {
+        'user': user,
+        'nearest_appointment': nearest_appointment,
+    }
+    return render(request, 'personalAccountProfile.html', context)

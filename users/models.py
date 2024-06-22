@@ -12,6 +12,10 @@ class CustomUser(AbstractUser):
     newsletter = models.BooleanField(default=True)  # Согласие на рассылку (да/нет)
     register_date = models.DateTimeField(auto_now_add=True)  # Дата создания аккаунта
     add_info = models.JSONField(null=True, blank=True)  # Дополнительная информация в формате json (Планы на ремонт,
+    first_name = models.CharField(max_length=12, null=True, blank=True)
+    second_name = models.CharField(max_length=30, null=True, blank=True)
+    third_name = models.CharField(max_length=30, null=True, blank=True)
+    email = models.CharField(max_length=30)
     # личная инфа)
 
 class LoyaltyTransaction(models.Model):

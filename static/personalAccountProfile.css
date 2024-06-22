@@ -238,3 +238,20 @@
     text-align: right;
     color: #EF570B;
 }
+
+.profile .change__btn {
+    display: inline-flex;
+    padding: 2px 71px;
+    margin-top: 2px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid #8BA21D;
+    background: #FFF;
+    color: #8BA21D;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 200%;
+    cursor: pointer;
+}
