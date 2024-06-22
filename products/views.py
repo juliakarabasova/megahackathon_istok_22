@@ -26,17 +26,15 @@ class IndexPageView(ListView):
         return queryset.order_by('-id')
 
 
+# def product_detail(request, pk):
+#     product = Product.objects.get(pk=pk)
+#     return render(request, 'type_of_furniture.html', {'product': product})
+#
+
 class ProductDetail(DetailView):
     model = Product
     template_name = 'type_of_furniture.html'
-    context_object_name = 'post'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['debug'] = 'This is a debug message'
-        context['product_debug'] = self.object  # Добавьте это для отладки
-
-        return context
+    context_object_name = 'product'
 
     # def get_object(self, *args, **kwargs):  # переопределяем метод получения объекта
     #     obj = cache.get(f'product-{self.kwargs["pk"]}', None)

@@ -7,31 +7,14 @@
 
 {% block content %}
 <main>
-    <section>
-        <pre>{{ product }}</pre>
-        <pre>{{ debug }}</pre>
-        <pre>{{ product_debug }}</pre>
-        <p>Name: {{ product.name }}</p>
-        <p>Description: {{ product.description }}</p>
-        <p>Price: {{ product.price }}</p>
-        <p>Image URL: {{ product.image.url }}</p>
-    </section>
-
     <section class="model">
         <p class="model_text">3d модель</p>
     </section>
     <section class="promo">
-        <p class="promo_text">
-            {{ product.description }}
-            Вы считаете, что в вашем помещении недостаточно места для того,
-            чтобы разместить всё необходимое для удобной и функциональной кухни?<br><br>
-
-            Это не так! Мы, как профессионалы, знаем, как эффективно
-            и привлекательно обустроить даже самые компактные помещения.
-            </p>
+        <p class="promo_text">{{ product.description }}</p>
     </section>
     <section class="options">
-        <p class="options_text"><span class="options_text_span">Стоимость данного проекта: </span>от {{ product.price }} 290 500</p><br><br>
+        <p class="options_text"><span class="options_text_span">Стоимость данного проекта: </span>от {{ product.price }} руб.</p><br><br>
         <p class="options_text"><span class="options_text_span">Срок изготовления: </span>45 дней</p><br><br>
         <p class="options_text"><span class="options_text_span">Размеры ШхВхГ (на примере): </span>2390х3000х600 размер кухни может быть адаптирован под Ваше помещение по всем параметрами.</p><br><br>
         <span class="options_text_span">Материалы:</span>
