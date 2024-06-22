@@ -1,40 +1,62 @@
-.profile {
-    margin-top: 64px;
+.profile .wrapper {
+    display: flex;
+    margin: 0px 120px 368px 120px;
+    font-family: "Gothic A1", sans-serif;
 }
 
-.profile__head {
+.profile .profile__head {
     color: #252D39;
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: capitalize;
+    margin-top: 64px;
 }
 
-.profile__photo {
+.profile .profile__photo {
     margin: 40px 0 68px;
+    border: 50%;
 }
 
-.profile__list {
+.profile .profile__list {
     display: flex;
     flex-direction: column;
     gap: 48px;
+    list-style: none;
+    margin-left: -40px;
+    width: 450px;
 }
 
-.profile__item {
+.profile .profile__item {
     color: #252D39;
     font-size: 32px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     cursor: pointer;
+    white-space: nowrap;
 }
 
-.profile__item_active {
+.profile .profile__item:hover {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: left;
+}
+
+.profile .link_active {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: left;
+}
+
+.profile .profile__item_active {
     font-weight: 600;
 }
 
-.profile__calendarTitle {
+.profile .profile__calendarTitle {
     margin: 48px 0;
     color: #252D39;
     font-size: 32px;
@@ -43,22 +65,22 @@
     line-height: normal;
 }
 
-.main__inner {
-    margin: 144px 376px 0 0;
+.profile .main__inner {
+    margin: 144px 376px 0 104px;
 }
 
-.form {
+.profile .form {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.form__label {
+.profile .form__label {
     display: flex;
     flex-direction: column;
 }
 
-.form__legend {
+.profile .form__legend {
     margin-bottom: -4px;
     color: #707070;
     font-size: 24px;
@@ -67,7 +89,7 @@
     line-height: 200%;
 }
 
-.form__input {
+.profile .form__input {
     width: 592px;
     max-height: 48px;
     box-sizing: border-box;
@@ -81,7 +103,7 @@
     line-height: 200%;
 }
 
-.delivery__address {
+.profile .delivery__address {
     margin: 36px 0 40px;
     color: #252D39;
     font-size: 32px;
@@ -90,28 +112,56 @@
     line-height: normal;
 }
 
-.order {
+.profile .order {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-top: 40px;
 }
 
-.order__box {
+.profile .order__box {
     width: 848px;
     height: 120px;
+    padding: 16px 52px 0px 40px;
+    display: flex;
+    gap: 148px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile .order__box_text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.profile .order__box_confirmation {
     border: 1px solid #F37F46;
 }
 
-.order__title {
-    color: #252D39;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 1.28px;
+.profile .order__box_assembly {
+    border: 1px solid #AA967B;
 }
 
-.order__text {
+.profile .order__box_sending {
+    border: 1px solid #5F700D;
+}
+
+.profile .order__box_received {
+    border: 1px solid #707070;
+}
+
+.profile .order__title {
+    color: #252D39;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0.04em;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.profile .order__text {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
@@ -123,4 +173,68 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.profile .bonuses {
+    margin-top: 40px;
+    margin-left: 300px;
+}
+
+.profile .bonuses_amount {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 150px;
+    text-align: right;
+    color: #5A9602;
+    width: 464px;
+}
+
+.profile .bonuses_history {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #252D39;
+}
+
+.profile .bonuses_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile .bonuses_wrap_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .bonuses_title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #252D39;
+    margin: 0;
+}
+
+.profile .bonuses_data {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #707070;
+    margin: 0;
+}
+
+.profile .bonuses_number_plus {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: right;
+    color: #5A9602;
+}
+
+.profile .bonuses_number_minus {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: right;
+    color: #EF570B;
 }

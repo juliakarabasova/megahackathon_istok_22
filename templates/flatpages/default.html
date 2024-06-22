@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
         {% load static %}
         <link href="{% static 'styles.css' %}" rel="stylesheet" />
-        <link rel="website icon" type="png" href="static/istok_icon.png">
+        <link rel="website icon" type="png" href="/static/istok_icon.png">
 
         <title>{% block title %}{% endblock title %}</title>
         <style>
@@ -291,7 +291,9 @@
             </article>
         </div>
         </div>
-
+        <script src="{% static 'popup.js' %}"></script>
+        <script src="{% static 'javascript.js' %}"></script>
+        <script src="{% static 'profile.js' %}"></script>
         <script>
     // Получаем элементы
 var loginModal = document.getElementById("loginModal");

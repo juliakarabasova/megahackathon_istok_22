@@ -5,63 +5,24 @@ ISTOK
 {% endblock title %}
 
 {% block content %}
-    <article class="profile">
-            <h1 class="profile__head">Профиль</h1>
-            <img class="profile__photo" src="/static/Profile/png/photo.png">
-            <nav>
-                <ul class="profile__list">
-                    <li class="profile__item">Основная информация</li>
-                    <li class="profile__item">Заказы</li>
-                    <li class="profile__item">Бонусы</li>
-                    <li class="profile__item">Реферальная программа</li>
-                    <li class="profile__item">Связаться с нами</li>
-                </ul>
-            </nav>
-            <h3 class="profile__calendarTitle">Календарь встреч</h3>
-        </article>
-        <article class="main__inner">
-            <form class="form" action="" method="">
-                <label class="form__label">
-                    <legend class="form__legend">Фамилия</legend>
-                    <input class="form__input" type="text" name="name">
-                </label>
-                <label class="form__label">
-                    <legend class="form__legend">Имя</legend>
-                    <input class="form__input" type="text" name="name">
-                </label>
-                <label class="form__label">
-                    <legend class="form__legend">Отчество</legend>
-                    <input class="form__input" type="text" name="name">
-                </label>
-                <label class="form__label">
-                    <legend class="form__legend">Номер телефона</legend>
-                    <input class="form__input" type="tel" name="name">
-                </label>
-                <label class="form__label">
-                    <legend class="form__legend">Почта</legend>
-                    <input class="form__input" type="email" name="name">
-                </label>
-            </form>
-            <section class="delivery">
-                <h3 class="delivery__address">Адреса доставки</h3>
-            </section>
-            <section class="order">
-                <div class="order__box order__box_">
-                    <h3 class="order__title">Заказ №598652086</h3>
-                    <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф 50x60</p>
-                </div>
-                <div class="order__box">
-                    <h3 class="order__title">Заказ №598652086</h3>
-                    <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф 50x60</p>
-                </div>
-                <div class="order__box">
-                    <h3 class="order__title">Заказ №598652086</h3>
-                    <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф 50x60</p>
-                </div>
-                <div class="order__box">
-                    <h3 class="order__title">Заказ №598652086</h3>
-                    <p class="order__text">Кухонный шкаф 30x40, кухонная плита, духовой шкаф, кухонный шкаф 50x60</p>
-                </div>
-            </section>
-        </article>
+        <main class="profile">
+            <div class="wrapper">
+            <article class="profile">
+                    <h1 class="profile__head">ПРОФИЛЬ</h1>
+                    <img class="profile__photo" src="/static/Profile/png/photo.png">
+                    <nav>
+                        <ul class="profile__list">
+                            <li class="profile__item link_active" onclick="drawMainInfo()">Основная Информация</li>
+                            <li class="profile__item" onclick="drawOrder()">Заказы</li>
+                            <li class="profile__item" onclick="drawBonuses()">Бонусы</li>
+                            <li class="profile__item">Реферальная программа</li>
+                            <li class="profile__item">Связаться с нами</li>
+                        </ul>
+                    </nav>
+                    <h3 class="profile__calendarTitle">Календарь встреч</h3>
+            </article>
+            <article class="main__inner">
+            </article>
+        </div>
+        </main>
 {% endblock content %}
