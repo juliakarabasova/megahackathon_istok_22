@@ -157,7 +157,7 @@
                     </div>
                     <ul class="footer__catalog">
                         <li class="footer__item">
-                            <a class="footer__link footer__title" href="#">Каталог</a>
+                            <a class="footer__link footer__title" href="{% url 'index' %}">Каталог</a>
                         </li>
                         <li class="footer__item">
                             <a class="footer__link" href="#">Кухня</a>
@@ -201,7 +201,7 @@
                             Звонок бесплатный 24/7</p>
                         <p class="footer__contacts_company">ООО “Исток-Мебель” 2024 <br><span class="footer__contacts_company_underlining" data-url="https://istok-mebel.ru/policy">Политика Конфиденциальности</span> </p>
                     </div>
-
+                </div>
             </footer>
         </div>
         <!-- Модальное окно -->
@@ -291,9 +291,8 @@
             </article>
         </div>
         </div>
-    </div>
 
-    <script>
+        <script>
     // Получаем элементы
 var loginModal = document.getElementById("loginModal");
 var loginBtn = document.getElementById("loginBtn");
@@ -302,10 +301,10 @@ var consultationBtnFooter = document.getElementById("consultationBtnFooter");
 var closeBtn = document.getElementsByClassName("close")[0];
 var modal1 = document.getElementById("modal1");
 var modal2 = document.getElementById("modal2");
+var closeBtns = document.getElementsByClassName("close");
 
 // Открываем модальное окно 1 при нажатии на кнопку "Регистрация/вход"
 if (loginBtn) {
-    // Если кнопка существует, добавляем обработчик событий
     loginBtn.onclick = function() {
         loginModal.style.display = "block";
         modal1.style.display = "block";
@@ -314,13 +313,11 @@ if (loginBtn) {
 }
 
 // Открываем модальное окно 2 при нажатии на кнопку "Записаться на консультацию"
-
 consultationBtn.onclick = function() {
     loginModal.style.display = "block";
     modal1.style.display = "none";
     modal2.style.display = "block";
 }
-
 // Обработчик для кнопки в футере
 consultationBtnFooter.onclick = function() {
     loginModal.style.display = "block";
@@ -334,15 +331,13 @@ consultationBtnFooter2.onclick = function() {
     modal2.style.display = "block";
 }
 
-
-
 // Закрываем модальное окно при нажатии вне его
 window.onclick = function(event) {
     if (event.target == loginModal) {
         loginModal.style.display = "none";
     }
 }
-        // Генерация случайного 5-значного кода
+// Генерация случайного 5-значного кода
 function generateCode() {
   return Math.floor(10000 + Math.random() * 90000);
 }
@@ -351,8 +346,6 @@ function generateCode() {
 document.querySelector('.loginRegistration__take').addEventListener('click', function() {
   const code = generateCode();
   console.log("Сгенерированный код:", code);
-
-  // Сохраняем код для последующей проверки
   window.generatedCode = code;
 });
 
@@ -419,10 +412,8 @@ function createOrLoginUser(phoneNumber) {
     // Показать сообщение об ошибке пользователю
   });
 }
-// Получаем все элементы с классом "close"
-var closeBtns = document.getElementsByClassName("close");
 
-// Добавляем обработчик для каждой кнопки закрытия
+// Обработчик для каждой кнопки закрытия
 for (var i = 0; i < closeBtns.length; i++) {
     closeBtns[i].onclick = function() {
         loginModal.style.display = "none";
@@ -450,6 +441,66 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = url;
     });
   });
+
+
+function saveAppointment(formData) {
+    console.log("Функция saveAppointment вызвана с данными:", formData);
+
+    console.log("Отправка запроса на сервер...");
+
+    fetch('{% url 'save_appointment' %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        console.log("Получен ответ от сервера", response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.status === 'success') {
+            console.log('Заявка успешно отправлена');
+        } else {
+            console.error('Ошибка:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка при отправке запроса:', error);
+    });
+}
+
+document.querySelector('.connection__btn').addEventListener('click', function() {
+    let formData = {
+        name: document.querySelector('input[placeholder="Как к Вам обращаться?"]').value,
+        phone_number: document.querySelector('input[placeholder="+7 (999)999-99-99"]').value,
+        purpose: getSelectedPurpose(),
+        notes: "Заявка с сайта",
+        contact_method: getSelectedContactMethod()
+    };
+
+    saveAppointment(formData);
+});
+
+function getSelectedPurpose() {
+    const checkboxes = document.querySelectorAll('.connection__help input[type="checkbox"]:checked');
+    if (checkboxes.length > 1) {
+        return 'complex_order';
+    } else if (checkboxes.length === 1) {
+        return checkboxes[0].value;
+    }
+    return '';
+}
+
+function getSelectedContactMethod() {
+    const radio = document.querySelector('.connection__help input[type="radio"]:checked');
+    return radio ? radio.value : '';
+}
     </script>
     </body>
 </html>
