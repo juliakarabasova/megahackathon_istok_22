@@ -30,7 +30,7 @@
 
 .profile .profile__item {
     color: #252D39;
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -46,7 +46,7 @@
 }
 
 .profile .link_active {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 600;
     line-height: 40px;
     text-align: left;
@@ -59,7 +59,7 @@
 .profile .profile__calendarTitle {
     margin: 48px 0;
     color: #252D39;
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -106,7 +106,7 @@
 .profile .delivery__address {
     margin: 36px 0 40px;
     color: #252D39;
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

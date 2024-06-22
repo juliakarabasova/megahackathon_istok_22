@@ -123,7 +123,7 @@
     margin-left: 734px;
 }
 
-.advertising {
+.advertising__new {
     height: 96px;
     display: flex;
     align-items: center;
@@ -135,7 +135,7 @@
 .advertising__action {
     position: absolute;
     margin-top: 0; 
-    margin-bottom: 0;
+    margin-bottom: -0.1em;
     color: #FFF;
     font-size: 139px;
     font-style: normal;
