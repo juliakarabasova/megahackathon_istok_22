@@ -25,6 +25,7 @@ ISTOK
             </article>
         </div>
         </main>
+
 <script>
     const infoBlock = document.querySelector('.main__inner');
 const linkCategory = document.querySelectorAll('.profile__item');
@@ -34,7 +35,7 @@ function clearActiveCategory() {
     document.querySelector('.profile__item.link_active').classList.remove('link_active');
 }
 
-//меняем активную актегорию
+//меняем активную категорию
 function toggleLinkCategory()  {
     linkCategory.forEach((item) => {
         item.addEventListener('click', (event) => {
@@ -176,9 +177,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Данные успешно обновлены!');
+                console.log('Данные успешно обновлены!');
             } else {
-                alert('Произошла ошибка при обновлении данных.');
+                console.log('Произошла ошибка при обновлении данных.');
             }
         })
         .catch(error => {
@@ -186,5 +187,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+const sectionSelection = Array.from(document.getElementsByClassName('profile__item'))
+let currentIndex = 0
+
+function updateSlider() {
+    sectionSelection.forEach((element, index) => {
+        element.classList.remove('profile__item_active')
+    });
+    sectionSelection[currentIndex].classList.add('profile__item_active')
+}
+
+for (let i = 0; i < sectionSelection.length; i++) {
+    sectionSelection[i].addEventListener('click', () => {
+        currentIndex = i
+        updateSlider()
+    })
+}
+
+updateSlider()
 </script>
 {% endblock content %}

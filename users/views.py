@@ -78,7 +78,6 @@ def personal_account_profile(request):
         'date_time').first()
 
     if request.method == 'POST':
-        print(request.POST.get('email', ''))
         user.first_name = request.POST.get('first_name', '')
         user.second_name = request.POST.get('second_name', '')
         user.third_name = request.POST.get('third_name', '')

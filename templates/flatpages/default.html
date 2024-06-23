@@ -160,25 +160,25 @@
                             <a class="footer__link footer__title" href="{% url 'index' %}">Каталог</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Кухня</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=2 %}">Кухня</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Гардеробы</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=8 %}">Гардеробы</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Стеллажи</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=5 %}">Стеллажи</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Ванные комнаты</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=15 %}">Ванные комнаты</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Комоды</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=12 %}">Комоды</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Мебель в детскую</a>
+                            <a class="footer__link" href="{% url 'product_detail' pk=19 %}">Мебель в детскую</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__link" href="#">Комплексная меблировка</a>
+                            <a class="footer__link" >Комплексная меблировка</a>
                         </li>
                     </ul>
                     <div class="footer__contacts">
@@ -229,9 +229,9 @@
         <div class="wrapper" id="modal2">
             <span class="close">&times;</span>
             <article class="connection">
-                <li class="footer__item">
+                <p class="footer__item" >
                     <a id="consultationBtnFooter2" class="footer__link">Записаться на консультацию</a>
-                </li>
+                </p>
                 <p class="connection__text">Закажите выезд нашего специалиста, и мы предоставим вам уникальную скидку в 10% на заказ от любой суммы. Оформите заявку в числе первых!</p>
                 <section class="connection__wrapper">
                     <form class="connection__field">
@@ -294,8 +294,6 @@
         </div>
         </div>
         <script src="{% static 'popup.js' %}"></script>
-        <script src="{% static 'javascript.js' %}"></script>
-
         <script>
     // Получаем элементы
 var loginModal = document.getElementById("loginModal");
