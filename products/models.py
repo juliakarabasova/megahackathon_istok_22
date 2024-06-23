@@ -37,12 +37,22 @@ class Product(models.Model):
     model_3d = models.FileField(upload_to='product_models/', blank=True, verbose_name='3д модель')
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default=KITCHEN, verbose_name='Категория')
     purpose = models.CharField(max_length=10, choices=PURPOSE_CHOICES, default=HOME, verbose_name='Назначение')
-    shape = models.CharField(max_length=100, blank=True, verbose_name='Форма изделия')
-    facade_material = models.CharField(max_length=100, blank=True, verbose_name='Материал фасадов')
-    countertop_material = models.CharField(max_length=100, blank=True, verbose_name='Материал столешницы')
+    manufacturing_time = models.IntegerField(verbose_name='Срок изготовления (в днях)', default=45)
+    dimensions = models.CharField(max_length=200, verbose_name='Размеры (ШхВхГ)', blank=True)
+    materials = models.TextField(verbose_name='Материалы', blank=True)
+    equipment = models.TextField(verbose_name='Наполнение', blank=True)
+    image_2 = models.ImageField(upload_to='product_images/image/', verbose_name='Изображение 2', blank=True)
+    image_3 = models.ImageField(upload_to='product_images/image/', verbose_name='Изображение 3', blank=True)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse('product_detail', kwargs={'pk': self.pk})
+
+    def get_materials_list(self):
+        return self.materials.split('\n') if self.materials else []
+
+    def get_equipment_list(self):
+        return self.equipment.split('\n') if self.equipment else []
+
