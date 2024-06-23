@@ -63,6 +63,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-left: -40px;
 }
 
 .profile .main__inner {
@@ -137,18 +138,22 @@
 
 .profile .order__box_confirmation {
     border: 1px solid #F37F46;
+    padding-bottom: 1.5em;
 }
 
 .profile .order__box_assembly {
     border: 1px solid #AA967B;
+    padding-bottom: 1.5em;
 }
 
 .profile .order__box_sending {
     border: 1px solid #5F700D;
+    padding-bottom: 1.5em;
 }
 
 .profile .order__box_received {
     border: 1px solid #707070;
+    padding-bottom: 1.5em;
 }
 
 .profile .order__title {
