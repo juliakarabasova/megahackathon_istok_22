@@ -677,16 +677,16 @@ body {
     }
 
 .flatpickr-calendar {
-        background: #98F898; /* Фон календаря */
+        background: #D1EDAC; /* Фон календаря */
         color: #000; /* Текст на календаре */
         border: 1px solid #CCC; /* Параметры границы */
     }
 .flatpickr.day {
-        background: #e8f5e9; /* Цвет яселки */
+        background: #EF570B; /* Цвет ячейки */
         color: #e8f5e9; /* Цвет текста в ячейке */
     }
 .flatpickr-day.today {
     border: 2px solid red;
     border-radius: 50%;
-    background: #00FA9A /* Цвет выбранного дня */
+    background: #5A9602 /* Цвет выбранного дня */
 }
