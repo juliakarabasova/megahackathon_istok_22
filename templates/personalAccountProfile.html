@@ -20,6 +20,7 @@ ISTOK
                         </ul>
                     </nav>
                     <h3 class="profile__calendarTitle">Календарь встреч</h3>
+                    <p id="calendar"></p>
             </article>
             <article class="main__inner">
             </article>
@@ -205,5 +206,16 @@ for (let i = 0; i < sectionSelection.length; i++) {
 }
 
 updateSlider()
+document.addEventListener("DOMContentLoaded", function() {
+    flatpickr("#calendar", {
+        inline: true,
+        mode: "multiple",
+        dateFormat: "Y-m-d",
+        locale: "ru",
+    });
+
+    drawMainInfo();
+    toggleLinkCategory();
+});
 </script>
 {% endblock content %}

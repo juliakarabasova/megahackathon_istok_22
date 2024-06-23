@@ -523,6 +523,7 @@ a.catalog__open {
 .video__play {
   display: block;
   width: 100%;
+  padding-top: 30px;
 }
 
 .overlay {

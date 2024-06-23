@@ -10,6 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="/static/styleconnection.css">
         <link rel="stylesheet" href="/static/personalAccountProfile.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&display=swap" rel="stylesheet">
         {% load static %}
         <link href="{% static 'styles.css' %}" rel="stylesheet" />
@@ -96,7 +99,7 @@
                                 <a class="header__link" href="{% url 'index' %}">Каталог</a>
                             </li>
                             <li class="header__item">
-                                <a id="consultationBtn" class="header__link" href="#">Записаться на консультацию</a>
+                                <a id="consultationBtn" class="header__link">Записаться на консультацию</a>
                             </li>
                             <li class="header__item">
                                 <a class="header__link" href="{% url 'about_us' %}">О нас</a>
@@ -232,7 +235,7 @@
                 <p class="footer__item" >
                     <a id="consultationBtnFooter2" class="footer__link">Записаться на консультацию</a>
                 </p>
-                <p class="connection__text">Закажите выезд нашего специалиста, и мы предоставим вам уникальную скидку в 10% на заказ от любой суммы. Оформите заявку в числе первых!</p>
+                <p class="connection__text">Закажите выезд нашего специалиста, и мы предоставим Вам уникальную скидку в 10% на заказ от любой суммы. Оформите заявку в числе первых!</p>
                 <section class="connection__wrapper">
                     <form class="connection__field">
                         <label class="connection__head">Имя</label>
@@ -263,7 +266,7 @@
                             </label>
                             <label class="connection__label">
                                 <input class="" type="checkbox" name="level">
-                                Гостинная
+                                Гостиная
                             </label>
                             <label class="connection__label">
                                 <input class="" type="checkbox" name="level">

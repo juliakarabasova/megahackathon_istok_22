@@ -7,37 +7,97 @@
 
 {% block content %}
 <main>
-    <section class="model">
-        <p class="model_text">3d модель</p>
-    </section>
+    <br><br><br>
+    <section class="model" style="width: 100%, padding-top: 30px;">
+    {% if product.model_3d %}
+        <div id="model-viewer-container" style="width: 100%; height: 100%;"></div>
+        <img src="static/Image/svg/rotate.svg" alt="Rotate" class="rotate-icon">
+        <script src="https://cdn.jsdelivr.net/npm/three@0.139.0/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.139.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.139.0/examples/js/controls/OrbitControls.js"></script>
+        <script>
+            const modelPath = "{% if product.model_3d %}{{ product.model_3d.url }}{% endif %}";
+            const container = document.getElementById('model-viewer-container');
+            const loader = new THREE.GLTFLoader();
+            loader.load(modelPath, function(gltf) {
+                const scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xEDEBEC);
+                scene.add(gltf.scene);
+                // Смещаем модель немного ниже и левее
+                gltf.scene.position.y -= 1;
+                gltf.scene.position.x -= 1;
+
+                const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+                camera.position.z = 3.5;
+
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+
+                const ambientLight = new THREE.AmbientLight(0x404040);
+                scene.add(ambientLight);
+
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                directionalLight.position.set(1, 1, 1);
+                scene.add(directionalLight);
+
+                const controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.25;
+                controls.enableZoom = true;
+                controls.enablePan = true;
+                controls.screenSpacePanning = false;
+                controls.minDistance = 1;
+                controls.maxDistance = 500;
+                controls.maxPolarAngle = Math.PI / 2;
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+                animate();
+                window.addEventListener('resize', function() {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                });
+            }, undefined, function(error) {
+                console.error(error);
+            });
+        </script>
+    {% else %}
+        <p>3D модель недоступна</p>
+    {% endif %}
+</section>
     <section class="promo">
         <p class="promo_text">{{ product.description }}</p>
     </section>
     <section class="options">
         <p class="options_text"><span class="options_text_span">Стоимость данного проекта: </span>от {{ product.price }} руб.</p><br><br>
-        <p class="options_text"><span class="options_text_span">Срок изготовления: </span>45 дней</p><br><br>
-        <p class="options_text"><span class="options_text_span">Размеры ШхВхГ (на примере): </span>2390х3000х600 размер кухни может быть адаптирован под Ваше помещение по всем параметрами.</p><br><br>
+        <p class="options_text"><span class="options_text_span">Срок изготовления: </span>{{ product.manufacturing_time }} дней</p><br><br>
+        <p class="options_text"><span class="options_text_span">Размеры ШхВхГ (на примере): </span>{{ product.dimensions }}, размер может быть адаптирован под Ваше помещение по всем параметрами.</p><br><br>
         <span class="options_text_span">Материалы:</span>
         <ol class="options_list options_text"><br>
-            <li class="option_item"> Корпус Egger </li>
-            <li class="option_item"> Фасады (двери) Эмаль матовая </li>
-            <li class="option_item"> Петли с доводчиком Hettich </li>
-            <li class="option_item"> Врезные нажимные механизмы (верхние модули) </li>
-            <li class="option_item"> Интегрированные ручки </li>
-            <li class="option_item"> Столешница Slotex </li>
-            <li class="option_item"> Стеновая панель Slotex </li>
+            {% for material in product.get_materials_list %}
+                <li class="option_item">{{ material }}</li>
+            {% endfor %}
         </ol><br><br>
         <span class="options_text_span">Наполнение:</span>
         <ol class="options_list options_text"><br>
-            <li class="option_item"> 2 Ящика типа тандем бокс полного выдвижения с доводчиком Hettich </li>
-            <li class="option_item"> Посудосушитель </li>
-            <li class="option_item"> Системы для сортировки мусора </li>
+            {% for item in product.get_equipment_list %}
+                <li class="option_item">{{ item }}</li>
+            {% endfor %}
         </ol>
     </section>
     <section class="furniture_show">
-        <img src="/static/images/furniture_1.png" class="furniture_img" alt="furniture" width="464" height="536">
-        <img src="/static/images/furniture_2.png" class="furniture_img" alt="furniture" width="464" height="536">
-        <img src="/static/images/furniture_3.png" class="furniture_img" alt="furniture" width="464" height="536">
+        <img src="{{ product.image.url }}" class="furniture_img" alt="furniture" width="464" height="536">
+        {% if product.image_2 %}
+            <img src="{{ product.image_2.url }}" class="furniture_img" alt="furniture" width="464" height="536">
+        {% endif %}
+        {% if product.image_3 %}
+            <img src="{{ product.image_3.url }}" class="furniture_img" alt="furniture" width="464" height="536">
+        {% endif %}
     </section>
 </main>
 {% endblock content %}
