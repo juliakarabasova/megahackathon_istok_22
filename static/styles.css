@@ -457,7 +457,7 @@ body {
 
 .hero_text_span {
     font-size: 32px;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
@@ -506,10 +506,11 @@ body {
 
 .values_main_title {
     font-size: 32px;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 36px;
     letter-spacing: 0.04em;
     text-align: left;
+    padding-top: 1.5em;
 }
 
 .values_main_text {
@@ -676,7 +677,7 @@ body {
         margin-top: 20px;
 
         padding-left: 60px;
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
 .flatpickr-calendar {

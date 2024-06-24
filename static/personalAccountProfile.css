@@ -72,6 +72,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    padding-left: 8em;
 }
 
 .profile .form__label {
@@ -116,6 +117,7 @@
     flex-direction: column;
     gap: 32px;
     margin-top: 40px;
+    padding-left: 6em;
 }
 
 .profile .order__box {
@@ -244,7 +246,7 @@
 }
 .profile .change__btn {
     display: inline-flex;
-    padding: 2px 71px;
+    /* padding: 2px 71px; */
     margin-top: 2px;
     justify-content: center;
     align-items: center;
@@ -257,7 +259,8 @@
     font-weight: 500;
     line-height: 200%;
     cursor: pointer;
-    width: 30%
+    width: 30%;
+    text-align: center;
 }
 
 .image-containerX {
