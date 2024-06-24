@@ -60,11 +60,13 @@
 }
 
 #loginModal  .wrapper {
-    width: 720px;
+
     height: 568px;
 }
 #loginModal .wrapper {
     position: relative;
+    width: auto;
+    max-width: 720px;
     margin: 0 auto;
     top: 50%;
     padding: 24px 72px 48px;
@@ -161,19 +163,19 @@
 }
 
 #loginModal  .loginRegistration {
-    width: 464px;
+    width: auto;
     height: 600px;
     padding: 24px 56px 76px;
     border-radius: 16px;
     background: #FFF;
 }
 
-#loginModal  .loginRegistration__close {
+#loginModal .loginRegistration__close {
     position: absolute;
-    margin-left: 360px;
+    top: 10px; /* Adjust top position */
+    right: 10px; /* Adjust right position */
     cursor: pointer;
 }
-
 #loginModal  .loginRegistration__title {
     margin-bottom: 32px;
     color: #252D39;

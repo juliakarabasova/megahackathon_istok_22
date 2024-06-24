@@ -24,7 +24,6 @@
     flex-direction: column;
     gap: 48px;
     list-style: none;
-    margin-left: -40px;
     width: 450px;
 }
 
@@ -63,7 +62,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin-left: -40px;
 }
 
 .profile .main__inner {
@@ -187,29 +185,30 @@
 
 .profile .bonuses_amount {
     font-size: 120px;
-    font-weight: 700;
     line-height: 150px;
-    text-align: right;
+    text-align: center;
     color: #5A9602;
     width: 464px;
+    padding-bottom: 30px;
 }
 
 .profile .bonuses_history {
     font-size: 24px;
-    font-weight: 600;
     line-height: 30px;
     color: #252D39;
 }
 
 .profile .bonuses_wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px; /* Увеличиваем отступ между строками */
 }
 
 .profile .bonuses_wrap_text {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 65%; /* Уменьшаем ширину текста для большего расстояния */
 }
 
 .profile .bonuses_title {
@@ -243,7 +242,6 @@
     text-align: right;
     color: #EF570B;
 }
-
 .profile .change__btn {
     display: inline-flex;
     padding: 2px 71px;
@@ -259,4 +257,20 @@
     font-weight: 500;
     line-height: 200%;
     cursor: pointer;
+    width: 30%
 }
+
+.image-containerX {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: height%;
+        }
+        .image-containerX img {
+            height: 210px;
+            width: auto;
+            margin-right: 10px; /* Расстояние между картинками */
+        }
+        .image-containerX img:last-child {
+            margin-right: 0; /* Убираем отступ у последней картинки */
+        }

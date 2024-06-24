@@ -54,7 +54,7 @@ ISTOK
     </section>
 
 
-    <section class="kitchens">
+    <section class="kitchens" style="width=100">
         <div class="kitchens_title_wrapp">
             <h2 class="section-title kitchens_title">КУХНИ</h2>
             <a href="{% url 'product_detail' pk=2 %}">
@@ -69,7 +69,7 @@ ISTOK
     </section>
 
 
-    <section class="children-room">
+    <section class="children-room" style="background-color: #EDEBEC;">
         <h2 class="section-title children-room_title">МЕБЕЛЬ В ДЕТСКУЮ</h2>
         <div class="children-room__img-container">
             <img src="../static/images/children_1.jpg" class="children_img" alt="children-room" width="337" height="448">
@@ -77,36 +77,36 @@ ISTOK
             <img src="../static/images/children_3.jpg" class="children_img" alt="children-room" width="337" height="448">
             <img src="../static/images/children_4.jpg" class="children_img" alt="children-room" width="337" height="448">
         </div>
-        <a href="{% url 'product_detail' pk=19 %}">
-                <button type="button" class="btn kitchens__btn">Пример работ</button>
+        <a href="{% url 'product_detail' pk=19 %}" style="text-align: center;">
+                <button type="button" class="btn kitchens__btn " >Пример работ</button>
         </a>
     </section>
 
 
-    <section class="racks">
+    <section class="racks" >
         <div class="racks_img_wrapp">
             <img src="../static/images/racks_2.jpg" class="racks_img" alt="racks" width="504" height="249">
             <img src="../static/images/racks_3.jpg" class="racks_img" alt="racks" width="504" height="255">
         </div>
         <img src="../static/images/racks_1.jpg" class="racks_img" alt="racks" width="512" height="584">
-        <div class="racks_title_wrapp">
-            <h2 class="section-title racks_title">СТЕЛАЖИ</h2>
-            <a href="{% url 'product_detail' pk=5 %}">
-                <button type="button" class="btn kitchens__btn">Пример работ</button>
+        <div class="mebl_title_wrapp" style="text-align: right;">
+            <h2 class="section-title mebl_title" >СТЕЛАЖИ</h2>
+            <a href="{% url 'product_detail' pk=5 %}" style="text-align: right;">
+                <button type="button" class="btn kitchens__btn" >Пример работ</button>
             </a>
         </div>
     </section>
 
 
-    <section class="wardrobes">
-        <h2 class="section-title wardrobes_title">ГАРДЕРОБЫ</h2>
+    <section class="wardrobes" style="background-color: #EDEBEC;">
+        <h2 class="section-title wardrobes_title">ГАРДЕРОБНЫЕ</h2>
         <div class="wardrobes__img-container">
             <img src="../static/images/wardrobes_1.jpg" class="wardrobes_img" alt="wardrobes" width="336" height="451">
             <img src="../static/images/wardrobes_2.jpg" class="wardrobes_img" alt="wardrobes" width="336" height="451">
             <img src="../static/images/wardrobes_3.jpg" class="wardrobes_img" alt="wardrobes" width="336" height="451">
             <img src="../static/images/wardrobes_4.jpg" class="wardrobes_img" alt="wardrobes" width="336" height="451">
         </div>
-        <a href="{% url 'product_detail' pk=8 %}">
+        <a href="{% url 'product_detail' pk=8 %}" style="text-align: center;">
             <button type="button" class="btn kitchens__btn">Пример работ</button>
         </a>
     </section>
@@ -127,17 +127,31 @@ ISTOK
     </section>
 
 
-    <section class="bathroom">
-        <h2 class="section-title bathroom_title">ВАННАЯ КОМНАТА</h2>
+    <section class="bathroom" style="background-color: #EDEBEC;">
+        <h2 class="section-title bathroom_title">ВАННЫЕ КОМНАТЫ</h2>
         <div class="bathroom__img-container">
             <img src="../static/images/bathroom_1.jpg" class="bathroom_img" alt="bathroom" width="337" height="448">
             <img src="../static/images/bathroom_2.jpg" class="bathroom_img" alt="bathroom" width="337" height="448">
             <img src="../static/images/bathroom_3.jpg" class="bathroom_img" alt="bathroom" width="337" height="448">
             <img src="../static/images/bathroom_4.jpg" class="bathroom_img" alt="bathroom" width="337" height="448">
         </div>
-        <a href="{% url 'product_detail' pk=15 %}">
+        <a href="{% url 'product_detail' pk=15 %}" style="text-align: center;">
             <button type="button" class="btn kitchens__btn">Пример работ</button>
         </a>
+    </section>
+
+    <section class="racks" >
+        <div class="racks_img_wrapp">
+            <img src="/static/images/мебл1.svg" class="racks_img" alt="kitchens" width="400" height="250">
+            <img src="/static/images/мебл2.svg" class="racks_img" alt="kitchens" width="400" height="250">
+        </div>
+        <img src="../static/images/мебл3.svg" class="racks_img" alt="racks" width="512" height="584">
+        <div class="mebl_title_wrapp" style="text-align: right;">
+            <h2 class="section-title mebl_title" >ПОЛНАЯ МЕБЕЛИРОВКА</h2>
+            <a href="{% url 'product_detail' pk=5 %}" style="text-align: right;">
+                <button type="button" class="btn kitchens__btn" >Пример работ</button>
+            </a>
+        </div>
     </section>
 
 </main>

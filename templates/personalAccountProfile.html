@@ -7,7 +7,7 @@ ISTOK
 {% block content %}
         <main class="profile">
             <div class="wrapper">
-            <article class="profile">
+            <article class="profile" style="margin-left: 35px;">
                     <h1 class="profile__head">ПРОФИЛЬ</h1>
                     <img class="profile__photo" src="/static/Profile/png/photo.png">
                     <nav>
@@ -20,7 +20,9 @@ ISTOK
                         </ul>
                     </nav>
                     <h3 class="profile__calendarTitle">Календарь встреч</h3>
-                    <p id="calendar"></p>
+                    <div class="calendar-container">
+                        <p id="calendar"></p>
+                    </div>
             </article>
             <article class="main__inner">
             </article>
@@ -79,6 +81,11 @@ function drawMainInfo() {
                     <input class="change__btn" type="button" id="submit-btn" value="Изменить данные">
                     <section class="delivery">
                         <h3 class="delivery__address">Адреса доставки</h3>
+                        <div class="image-containerX">
+                        <img src="/static/images/newadr.svg" class="confirmation" alt="confirmation">
+                        <img src="/static/images/adr1.svg" class="confirmation" alt="confirmation">
+                        <img src="/static/images/adr2.svg" class="confirmation" alt="confirmation">
+                        </div>
                     </section>
                 </form>
                 </div>`;
@@ -127,7 +134,7 @@ let order = `<section class="bonuses">
                     <h4 class="bonuses_history">История бонусов</h4>
                     <div class="bonuses_wrap">
                         <div class="bonuses_wrap_text">
-                            <h6 class="bonuses_title">Реферальная программа</h6>
+                            <h6 class="bonuses_title" style="padding-top:40">Реферальная программа</h6>
                             <p class="bonuses_data">28.07.2024</p>
                         </div>
                         <p class="bonuses_number bonuses_number_plus">+10000</p>
@@ -207,15 +214,12 @@ for (let i = 0; i < sectionSelection.length; i++) {
 
 updateSlider()
 document.addEventListener("DOMContentLoaded", function() {
-    flatpickr("#calendar", {
-        inline: true,
-        mode: "multiple",
-        dateFormat: "Y-m-d",
-        locale: "ru",
-    });
-
-    drawMainInfo();
-    toggleLinkCategory();
+  flatpickr("#calendar", {
+    inline: true,
+    mode: "multiple",
+    dateFormat: "Y-m-d",
+    locale: "ru",
+  });
 });
 </script>
 {% endblock content %}

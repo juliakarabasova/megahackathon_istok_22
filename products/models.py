@@ -32,6 +32,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название продукта')
     description = models.TextField(verbose_name='Описание')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
+    round_price = models.CharField(max_length=10, verbose_name='Круглая цена')
     image = models.ImageField(upload_to='product_images/image/', verbose_name='Изображение')
     design = models.ImageField(upload_to='product_images/design/', blank=True, verbose_name='ЧБ эскиз')
     model_3d = models.FileField(upload_to='product_models/', blank=True, verbose_name='3д модель')
@@ -55,4 +56,5 @@ class Product(models.Model):
 
     def get_equipment_list(self):
         return self.equipment.split('\n') if self.equipment else []
+
 

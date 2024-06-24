@@ -364,7 +364,7 @@ body {
 
 .footer__title {
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 40px;
     color: #252D39;
 }
@@ -674,12 +674,16 @@ body {
 .calendar-container {
         width: 300px;
         margin-top: 20px;
+
+        padding-left: 60px;
+        padding-top: 20px;
     }
 
 .flatpickr-calendar {
         background: #D1EDAC; /* Фон календаря */
         color: #000; /* Текст на календаре */
         border: 1px solid #CCC; /* Параметры границы */
+        transform: scale(1.4);
     }
 .flatpickr.day {
         background: #EF570B; /* Цвет ячейки */
@@ -689,4 +693,31 @@ body {
     border: 2px solid red;
     border-radius: 50%;
     background: #5A9602 /* Цвет выбранного дня */
+}
+
+/* жирный аист с новыми стилями */
+.advertising__arrowRight { /* -> */
+margin-left: 200px;
+}
+.mebl {
+    padding: 107px 0px 187px 120px;
+    display: flex;
+    gap: 80px;
+    width: auto; /* Автоматическая ширина */
+}
+
+.mebl_title_wrapp {
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    /* Удалите лишние отступы или границы, если необходимо */
+}
+
+.mebl_title {
+    text-align: right;
+}
+.mebl img {
+    max-width: 100%; /* Масштабирование изображений */
+    height: auto;
 }
