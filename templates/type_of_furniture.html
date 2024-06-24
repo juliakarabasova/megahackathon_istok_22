@@ -28,7 +28,7 @@
                 gltf.scene.position.x -= 1;
 
                 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-                camera.position.z = 3.5;
+                camera.position.z = 2.8;
 
                 const renderer = new THREE.WebGLRenderer({ antialias: true });
                 renderer.setSize(container.clientWidth, container.clientHeight);
@@ -74,9 +74,9 @@
         <p class="promo_text">{{ product.description }}</p>
     </section>
     <section class="options">
-        <p class="options_text"><span class="options_text_span">Стоимость данного проекта: </span>от {{ product.price }} руб.</p><br><br>
-        <p class="options_text"><span class="options_text_span">Срок изготовления: </span>{{ product.manufacturing_time }} дней</p><br><br>
-        <p class="options_text"><span class="options_text_span">Размеры ШхВхГ (на примере): </span>{{ product.dimensions }}, размер может быть адаптирован под Ваше помещение по всем параметрами.</p><br><br>
+        <p class="options_text"><span class="options_text_span">Стоимость данного проекта: </span>от {{product.round_price}} руб.</p><br><br>
+        <p class="options_text"><span class="options_text_span">Срок изготовления: </span>{{product.manufacturing_time}} дней</p><br><br>
+        <p class="options_text"><span class="options_text_span">Размеры ШхВхГ (на примере): </span>{{product.dimensions}}, размер может быть адаптирован под Ваше помещение по всем параметрам.</p><br><br>
         <span class="options_text_span">Материалы:</span>
         <ol class="options_list options_text"><br>
             {% for material in product.get_materials_list %}

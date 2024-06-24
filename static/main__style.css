@@ -166,7 +166,7 @@
     color: #252D39;
     font-size: 40px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -225,7 +225,7 @@
     text-align: center;
     font-size: 40px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -277,13 +277,13 @@
     color: #252D39;
     font-size: 40px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: normal;
 }
 
 .wardrobe__wrap {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .workOrder__wrapper {
@@ -292,16 +292,25 @@
     gap: 128px;
 }
 
-.wardrobe__num {
+.wardrobe__num.left {
     width: 114px;
     height: 149px;
-    margin-right: 14px;
+    margin-right: 12px;
 }
-
+.wardrobe__num.right {
+    width: 114px;
+    height: 149px;
+    margin-left: 12px;
+}
 .wardrobe__box {
     display: flex;
+align-items: center;
 }
-
+.wardrobe__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px; /* аист Отступ между рядами */
+}
 .wardrobe__inner {
     max-width: 464px;
     min-height: 186px;
@@ -314,6 +323,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 10px; /* аист */
 }
 
 .wardrobe__text {
@@ -333,7 +343,7 @@
 }
 
 .wardrobe__num_right {
-    margin: 0 0 0 36px;
+margin: 0 0 0 36px;
 }
 
 .footer {
@@ -370,7 +380,7 @@
     color: #252D39;
     font-size: 32px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     line-height: normal;
 }
 
